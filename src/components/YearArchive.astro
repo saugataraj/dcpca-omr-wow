@@ -1,0 +1,337 @@
+---
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const years = [
+  { year: "all", label: "All Years" },
+  { year: 2025, label: "2025 (12th)" },
+  { year: 2024, label: "2024 (11th)" },
+  { year: 2023, label: "2023 (10th)" },
+  { year: 2022, label: "2022 (9th)" },
+  { year: 2021, label: "2021 (8th)" },
+  { year: 2020, label: "2020 (7th)" },
+  { year: 2019, label: "2019 (6th)" },
+  { year: 2018, label: "2018 (5th)" },
+  { year: 2017, label: "2017 (4th)" },
+  { year: 2016, label: "2016 (3rd)" },
+  { year: 2015, label: "2015 (2nd)" },
+  { year: 2014, label: "2014 (1st)" }
+];
+
+const galleryImages = [
+  { file: "2025_01.jpeg", year: 2025, edition: "12th Sharadotsav (2025)", title: "Durga Pratima & Grand Pandal", caption: "The radiant idol of Maa Durga at our 12th Sharadotsav celebration on OMR." },
+  { file: "2025_02.jpeg", year: 2025, edition: "12th Sharadotsav (2025)", title: "Cultural Performance & Evening Arati", caption: "Community members gathered for the evening cultural assembly and Maha Arati." },
+  { file: "2025_03.jpeg", year: 2025, edition: "12th Sharadotsav (2025)", title: "Dhunuchi Naach & Rhythm of Dhak", caption: "Enthusiastic participation in traditional Dhunuchi dance during Sandhi Puja." },
+  { file: "2025_04.jpeg", year: 2025, edition: "12th Sharadotsav (2025)", title: "Maha Bhog & Community Feast", caption: "Serving prasad and grand community feast to thousands of devotees." },
+
+  { file: "2024_01.jpeg", year: 2024, edition: "11th Sharadotsav (2024)", title: "Divine Sanctum & Pandal Lighting", caption: "The majestic entrance and illumination of the 11th edition Sharadotsav pandal." },
+  { file: "2024_02.jpeg", year: 2024, edition: "11th Sharadotsav (2024)", title: "Cultural Evening & Youth Drama", caption: "Next-gen youngsters performing on stage during Rabindra & Nazrul cultural tribute." },
+  { file: "2024_03.jpeg", year: 2024, edition: "11th Sharadotsav (2024)", title: "Pushpanjali & Morning Prayers", caption: "Devotees offering fresh flowers during Anjali on Ashtami morning." },
+  { file: "2024_04.jpeg", year: 2024, edition: "11th Sharadotsav (2024)", title: "Sindoor Khela & Bijoya Greeting", caption: "Married women celebrating Sindoor Khela prior to the idol immersion procession." },
+
+  { file: "2023_01.jpeg", year: 2023, edition: "10th Sharadotsav (2023)", title: "Decade Milestone Pandal", caption: "Commemorating a decade of Durga Puja unity along Chennai's Coromandel Coast." },
+  { file: "2023_02.jpeg", year: 2023, edition: "10th Sharadotsav (2023)", title: "Carnatic & Baul Music Confluence", caption: "A unique musical synergy blending Carnatic ragas with Bengali folk melodies." },
+  { file: "2023_03.jpeg", year: 2023, edition: "10th Sharadotsav (2023)", title: "Anandamela Food Stalls", caption: "Home chefs showcasing authentic Bengali delicacies alongside Tamil culinary treats." },
+  { file: "2023_04.jpeg", year: 2023, edition: "10th Sharadotsav (2023)", title: "Art & Alpana Workshops", caption: "Traditional floor art (Alpana) competition held at the pandal complex." },
+
+  { file: "2022_01.jpeg", year: 2022, edition: "9th Sharadotsav (2022)", title: "Post-Pandemic Grand Reunion", caption: "Families celebrating together with renewed fervor and joy." },
+  { file: "2022_02.jpg",  year: 2022, edition: "9th Sharadotsav (2022)", title: "Traditional Pratima Aesthetics", caption: "Handcrafted eco-friendly idol brought directly from Kumartuli artisans." },
+  { file: "2022_03.jpeg", year: 2022, edition: "9th Sharadotsav (2022)", title: "Children's Talent Stage", caption: "Young stars reciting Tagore poetry and participating in classical dance." },
+  { file: "2022_04.jpg",  year: 2022, edition: "9th Sharadotsav (2022)", title: "Sandhi Puja Midnight Gathering", caption: "108 lamps lit during the sacred transition from Ashtami to Navami." },
+
+  { file: "2021_01.jpeg", year: 2021, edition: "8th Sharadotsav (2021)", title: "Sacred Pandal Devotions", caption: "Compact yet deeply spiritual observance of Sharadotsav on OMR." },
+  { file: "2021_02.jpeg", year: 2021, edition: "8th Sharadotsav (2021)", title: "Hybrid Cultural Broadcast", caption: "Virtual and live cultural presentations engaging members near and far." },
+  { file: "2021_03.jpeg", year: 2021, edition: "8th Sharadotsav (2021)", title: "Maha Navami Rituals", caption: "Ritualistic offerings and Vedic chanting at the main altar." },
+  { file: "2021_04.jpeg", year: 2021, edition: "8th Sharadotsav (2021)", title: "Prasad Distribution", caption: "Safe packed bhog prasad distribution to community members." },
+
+  { file: "2020_01.jpeg", year: 2020, edition: "7th Sharadotsav (2020)", title: "Resilient Spirit of Utsab", caption: "Maintaining sacred traditions with solemn devotion during challenging times." },
+  { file: "2020_02.jpg",  year: 2020, edition: "7th Sharadotsav (2020)", title: "Intimate Prayer Ceremony", caption: "Heartfelt prayers for universal health and peace." },
+
+  { file: "2019_01.jpeg", year: 2019, edition: "6th Sharadotsav (2019)", title: "Grand Pandal Illuminations", caption: "Spectacular exterior lighting structure welcoming thousands of visitors." },
+  { file: "2019_02.jpeg", year: 2019, edition: "6th Sharadotsav (2019)", title: "Grand Musical Night", caption: "Distinguished guest artists performing live under the starlit sky." },
+  { file: "2019_03.jpeg", year: 2019, edition: "6th Sharadotsav (2019)", title: "Dhaki Performers from Bengal", caption: "Traditional Dhaki beaters elevating the festive spirit with ecstatic rhythms." },
+  { file: "2019_04.jpeg", year: 2019, edition: "6th Sharadotsav (2019)", title: "Community Lunch Gathering", caption: "Over 3,000 guests enjoying afternoon khichuri bhog together." },
+
+  { file: "2018_01.jpeg", year: 2018, edition: "5th Sharadotsav (2018)", title: "5th Milestone Celebration", caption: "Celebrating five glorious years of community building in Chennai." },
+  { file: "2018_02.jpeg", year: 2018, edition: "5th Sharadotsav (2018)", title: "Youth Drama Production", caption: "Stage play based on classic Bengali literature presented by OMR youth." },
+  { file: "2018_03.jpeg", year: 2018, edition: "5th Sharadotsav (2018)", title: "Golu & Navratri Harmony", caption: "Welcoming Tamil neighbors to share in festival traditions." },
+  { file: "2018_04.jpeg", year: 2018, edition: "5th Sharadotsav (2018)", title: "Bijoya Dashami Immersion", caption: "Procession heading towards the Bay of Bengal for visarjan." },
+
+  { file: "2017_01.jpeg", year: 2017, edition: "4th Sharadotsav (2017)", title: "Elegantly Crafted Idol", caption: "Classic Sholar Saaj decoration on the clay image of Goddess Durga." },
+  { file: "2017_02.jpeg", year: 2017, edition: "4th Sharadotsav (2017)", title: "Saraswati & Rabindra Tribute", caption: "Art, poetry, and recitation competitions for young children." },
+  { file: "2017_03.jpeg", year: 2017, edition: "4th Sharadotsav (2017)", title: "Community Bhog Seva", caption: "Dedicated volunteers serving fresh meals to all attendees." },
+  { file: "2017_04.jpeg", year: 2017, edition: "4th Sharadotsav (2017)", title: "Evening Arati & Chanting", caption: "Incense, bells, and dhak sounds filling the autumn air." },
+
+  { file: "2016_01.jpeg", year: 2016, edition: "3rd Sharadotsav (2016)", title: "3rd Edition Pandal Grounds", caption: "Expanding our footprint along OMR to accommodate growing membership." },
+  { file: "2016_02.jpeg", year: 2016, edition: "3rd Sharadotsav (2016)", title: "Cultural Ensemble", caption: "Chorus singing iconic Rabindra Sangeet and patriotic songs." },
+  { file: "2016_03.jpeg", year: 2016, edition: "3rd Sharadotsav (2016)", title: "Children's Art Competition", caption: "Encouraging artistic expression in young minds." },
+  { file: "2016_04.jpeg", year: 2016, edition: "3rd Sharadotsav (2016)", title: "Traditional Dashami Hugs", caption: "Kola Koli and distribution of sweets on Bijoya Dashami." },
+
+  { file: "2015_01.jpeg", year: 2015, edition: "2nd Sharadotsav (2015)", title: "2nd Edition Festivities", caption: "Strengthening bond among Prabasi Bengalis in Dakshin Chennai." },
+  { file: "2015_02.jpeg", year: 2015, edition: "2nd Sharadotsav (2015)", title: "Evening Cultural Assembly", caption: "Community members presenting music, dance, and poetry." },
+  { file: "2015_03.jpeg", year: 2015, edition: "2nd Sharadotsav (2015)", title: "Pandal Decor & Flowers", caption: "Handmade floral arrangements and traditional lamps." },
+  { file: "2015_04.jpeg", year: 2015, edition: "2nd Sharadotsav (2015)", title: "Saptami Morning Rituals", caption: "Navapatrika entrance and auspicious commencement." },
+
+  { file: "2014_01.jpeg", year: 2014, edition: "1st Sharadotsav (2014)", title: "Inaugural Durga Puja (2014)", caption: "The historic first Sharadotsav of DCPCA on Chennai's OMR corridor." },
+  { file: "2014_02.jpeg", year: 2014, edition: "1st Sharadotsav (2014)", title: "First Pratima Sthapana", caption: "Welcoming Maa Durga for the first time in our community hall." },
+  { file: "2014_03.jpeg", year: 2014, edition: "1st Sharadotsav (2014)", title: "Founding Members & Volunteers", caption: "The passionate founding team whose dream sparked 12+ years of tradition." },
+  { file: "2014_04.jpeg", year: 2014, edition: "1st Sharadotsav (2014)", title: "Inaugural Bhog Distribution", caption: "The beginning of a warm tradition of community meal sharing." }
+];
+---
+
+<section id="gallery" class="py-24 bg-[#0A0812] border-t border-white/5 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Retrospective Archive</span>
+      <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">
+        12 Years of Memories
+      </h2>
+      <p class="text-gray-400 text-sm mt-3">
+        Journey through twelve editions (2014 – 2025) of Sharadotsav on Chennai's OMR corridor as we prepare for our landmark 13th year.
+      </p>
+      <div class="w-20 h-1 bg-gradient-to-r from-dcpca-terracotta to-dcpca-gold mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <!-- Interactive Year Filter Bar -->
+    <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-6 scrollbar-none mb-10 text-xs sm:text-sm">
+      {years.map((y) => (
+        <button
+          type="button"
+          data-year-btn={y.year}
+          class={`px-4 py-2 rounded-full transition-all duration-300 whitespace-nowrap border font-medium cursor-pointer ${
+            y.year === 'all'
+              ? 'bg-gradient-to-r from-dcpca-terracotta to-dcpca-gold text-black border-transparent font-bold shadow-lg shadow-dcpca-terracotta/20 filter-active'
+              : 'bg-white/5 text-gray-300 border-white/10 hover:border-dcpca-gold/50 hover:text-white'
+          }`}
+        >
+          {y.label}
+        </button>
+      ))}
+    </div>
+
+    <!-- Responsive Grid Layout -->
+    <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {galleryImages.map((img, index) => {
+        const fullSrc = `${baseUrl}gallery/${img.file}`;
+        return (
+          <div
+            data-year={img.year}
+            data-index={index}
+            class="gallery-item group relative rounded-2xl overflow-hidden bg-[#141026] border border-dcpca-gold/20 hover:border-dcpca-gold/60 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-2xl hover:shadow-dcpca-gold/10 hover:-translate-y-1"
+          >
+            <!-- Image Container -->
+            <div class="aspect-[4/3] w-full overflow-hidden relative bg-black/40">
+              <img
+                src={fullSrc}
+                alt={img.title}
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A0812] via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+
+              <!-- Year Badge -->
+              <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-dcpca-gold text-[10px] font-mono font-bold px-2.5 py-1 rounded-full border border-dcpca-gold/30">
+                {img.edition}
+              </div>
+
+              <!-- Zoom Icon Indicator -->
+              <div class="absolute top-3 right-3 bg-dcpca-gold/80 text-black p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Card Content Overlay/Bottom -->
+            <div class="p-4 relative z-10">
+              <h3 class="text-sm font-serif font-bold text-white group-hover:text-dcpca-goldLight transition-colors line-clamp-1">
+                {img.title}
+              </h3>
+              <p class="text-xs text-gray-400 mt-1 line-clamp-2 leading-relaxed">
+                {img.caption}
+              </p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  <!-- Pure JS Lightbox Modal -->
+  <div
+    id="lightbox-modal"
+    class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden flex-col justify-between p-4 sm:p-8 transition-opacity duration-300"
+    role="dialog"
+    aria-modal="true"
+  >
+    <!-- Modal Header -->
+    <div class="flex items-center justify-between text-white border-b border-white/10 pb-4">
+      <div>
+        <span id="lb-badge" class="text-xs font-mono text-dcpca-gold uppercase tracking-wider block"></span>
+        <h3 id="lb-title" class="text-lg sm:text-xl font-serif font-bold text-white"></h3>
+      </div>
+      <button
+        id="lb-close"
+        type="button"
+        class="text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer"
+        aria-label="Close Lightbox"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal Body / High Res Image Display -->
+    <div class="relative flex-1 flex items-center justify-center my-4 overflow-hidden">
+      <!-- Prev Button -->
+      <button
+        id="lb-prev"
+        type="button"
+        class="absolute left-2 sm:left-4 z-20 bg-black/60 hover:bg-dcpca-gold hover:text-black text-white p-3 rounded-full backdrop-blur-md border border-white/20 transition-all cursor-pointer"
+        aria-label="Previous Image"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <img
+        id="lb-img"
+        src=""
+        alt=""
+        class="max-h-[75vh] max-w-full object-contain rounded-xl shadow-2xl border border-white/10 transition-transform duration-300"
+      />
+
+      <!-- Next Button -->
+      <button
+        id="lb-next"
+        type="button"
+        class="absolute right-2 sm:right-4 z-20 bg-black/60 hover:bg-dcpca-gold hover:text-black text-white p-3 rounded-full backdrop-blur-md border border-white/20 transition-all cursor-pointer"
+        aria-label="Next Image"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal Footer / Caption & Counter -->
+    <div class="border-t border-white/10 pt-4 text-center max-w-3xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
+      <p id="lb-caption" class="text-gray-300 font-light"></p>
+      <span id="lb-counter" class="text-xs font-mono text-dcpca-gold whitespace-nowrap bg-white/5 px-3 py-1 rounded-full border border-white/10"></span>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Dynamic Gallery Filtering & Lightbox Controller
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('[data-year-btn]');
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-item')) as HTMLElement[];
+
+    const modal = document.getElementById('lightbox-modal') as HTMLElement;
+    const lbImg = document.getElementById('lb-img') as HTMLImageElement;
+    const lbTitle = document.getElementById('lb-title') as HTMLElement;
+    const lbBadge = document.getElementById('lb-badge') as HTMLElement;
+    const lbCaption = document.getElementById('lb-caption') as HTMLElement;
+    const lbCounter = document.getElementById('lb-counter') as HTMLElement;
+
+    const lbClose = document.getElementById('lb-close');
+    const lbPrev = document.getElementById('lb-prev');
+    const lbNext = document.getElementById('lb-next');
+
+    let visibleItems: HTMLElement[] = [...galleryItems];
+    let currentIndex = 0;
+
+    // Filter Logic
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const year = btn.getAttribute('data-year-btn');
+
+        // Update active button state
+        filterButtons.forEach((b) => {
+          b.classList.remove('bg-gradient-to-r', 'from-dcpca-terracotta', 'to-dcpca-gold', 'text-black', 'font-bold', 'shadow-lg');
+          b.classList.add('bg-white/5', 'text-gray-300');
+        });
+
+        btn.classList.remove('bg-white/5', 'text-gray-300');
+        btn.classList.add('bg-gradient-to-r', 'from-dcpca-terracotta', 'to-dcpca-gold', 'text-black', 'font-bold', 'shadow-lg');
+
+        // Filter Grid Items
+        visibleItems = [];
+        galleryItems.forEach((item) => {
+          const itemYear = item.getAttribute('data-year');
+          if (year === 'all' || itemYear === year) {
+            item.style.display = 'block';
+            visibleItems.push(item);
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Lightbox Logic
+    function updateLightbox(index: number) {
+      if (visibleItems.length === 0) return;
+      if (index < 0) index = visibleItems.length - 1;
+      if (index >= visibleItems.length) index = 0;
+      currentIndex = index;
+
+      const currentItem = visibleItems[currentIndex];
+      const imgEl = currentItem.querySelector('img') as HTMLImageElement;
+      const titleEl = currentItem.querySelector('h3') as HTMLElement;
+      const captionEl = currentItem.querySelector('p') as HTMLElement;
+      const badgeEl = currentItem.querySelector('.absolute.top-3.left-3') as HTMLElement;
+
+      if (imgEl && lbImg) lbImg.src = imgEl.src;
+      if (titleEl && lbTitle) lbTitle.innerText = titleEl.innerText;
+      if (captionEl && lbCaption) lbCaption.innerText = captionEl.innerText;
+      if (badgeEl && lbBadge) lbBadge.innerText = badgeEl.innerText;
+      if (lbCounter) lbCounter.innerText = `${currentIndex + 1} / ${visibleItems.length}`;
+    }
+
+    function openLightbox(index: number) {
+      updateLightbox(index);
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Attach Click Events to Gallery Items
+    galleryItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        const itemIndex = visibleItems.indexOf(item);
+        if (itemIndex !== -1) {
+          openLightbox(itemIndex);
+        }
+      });
+    });
+
+    // Controls
+    if (lbClose) lbClose.addEventListener('click', closeLightbox);
+    if (lbPrev) lbPrev.addEventListener('click', () => updateLightbox(currentIndex - 1));
+    if (lbNext) lbNext.addEventListener('click', () => updateLightbox(currentIndex + 1));
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (modal.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') updateLightbox(currentIndex - 1);
+      if (e.key === 'ArrowRight') updateLightbox(currentIndex + 1);
+    });
+
+    // Close on background backdrop click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeLightbox();
+    });
+  });
+</script>
