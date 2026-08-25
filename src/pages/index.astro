@@ -1,1 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ScrollyHero from '../components/ScrollyHero.astro';
+---
 
+<Layout title="DCPCA | Dakshin Chennai Prabasi Cultural Association - উৎসব সবার, মিলন সবার">
+  
+  <!-- 1. Apple-style Scrollytelling Hero -->
+  <ScrollyHero />
+
+  <!-- 2. Philosophical Anchor Section (Rabindranath Tagore's Utsab) -->
+  <section id="philosophy" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Living Philosophy</span>
+      <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">
+        উৎসব (Utsab) — The Spirit of Communion
+      </h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-dcpca-terracotta to-dcpca-gold mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Pillar 1: Milan -->
+      <div class="card-glass p-8 rounded-2xl relative overflow-hidden group">
+        <div class="text-4xl mb-4 text-dcpca-gold">🤝</div>
+        <h3 class="text-xl font-serif font-bold text-white mb-2">মিলন (Milan — Union)</h3>
+        <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“একলার উৎসব হইলে চলে না”</p>
+        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+          Daily life scatters us into isolated pursuits. A festival is the sacred moment when boundaries dissolve, bringing families, neighbors, and strangers together in joy.
+        </p>
+      </div>
+
+      <!-- Pillar 2: Prem & Ananda -->
+      <div class="card-glass p-8 rounded-2xl relative overflow-hidden group">
+        <div class="text-4xl mb-4 text-dcpca-terracotta">✨</div>
+        <h3 class="text-xl font-serif font-bold text-white mb-2">আনন্দ ও প্রেম (Joy & Love)</h3>
+        <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“আনন্দরূপমমৃতং যদ্বিভাতি”</p>
+        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+          Beyond dry rituals, true celebration is the experience of boundless joy and affection. We celebrate art, poetry, and shared meals with open hearts.
+        </p>
+      </div>
+
+      <!-- Pillar 3: Tyag & Inclusivity -->
+      <div class="card-glass p-8 rounded-2xl relative overflow-hidden group">
+        <div class="text-4xl mb-4 text-amber-300">🌿</div>
+        <h3 class="text-xl font-serif font-bold text-white mb-2">উদারতা (Universal Harmony)</h3>
+        <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“সেদিন একলার গৃহ সকলের গৃহ হয়”</p>
+        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+          On festival days, our home belongs to everyone. We welcome non-Bengali brothers, sisters, and Chennai residents with warmth and equal honor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Bento Grid: Cultural Programs & Heritage Hub -->
+  <section id="heritage" class="py-20 bg-[#0E0B1A] border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-widest text-dcpca-terracotta">Heritage & Youth</span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">
+          Nurturing Bengal's Icons for Next-Gen
+        </h2>
+        <p class="text-gray-400 text-sm mt-3">Connecting our children raised in Chennai with the timeless thoughts of Bengal's greatest luminaries.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1: Rabindranath & Nazrul -->
+        <div class="card-glass p-6 rounded-2xl md:col-span-2 flex flex-col justify-between">
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full bg-dcpca-gold/20 text-dcpca-gold text-xs font-semibold uppercase mb-3">Literary & Performing Arts</div>
+            <h3 class="text-2xl font-serif font-bold text-white mb-2">Rabindra & Nazrul Jayanti Academies</h3>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              Regular workshops for children and youth in Rabindra Sangeet, recitation, drama, and classical Bengali literature to instill deep intellectual and artistic roots.
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10 text-xs text-dcpca-goldLight font-medium">
+            <span>📚 Storytelling Sessions</span> • <span>🎭 Annual Natok Stage</span> • <span>🎶 Vocal Training</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Swami Vivekananda & Vidyasagar -->
+        <div class="card-glass p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full bg-dcpca-terracotta/20 text-dcpca-terracotta text-xs font-semibold uppercase mb-3">Philosophy & Values</div>
+            <h3 class="text-xl font-serif font-bold text-white mb-2">Vivekananda & Vidyasagar Youth Forum</h3>
+            <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+              Discourses on character building, moral courage, rationalism, and compassion for students and teenagers.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 text-xs text-gray-400">
+            Monthly Youth Dialogues
+          </div>
+        </div>
+
+        <!-- Card 3: Satyajit Ray Cinema & Arts -->
+        <div class="card-glass p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-semibold uppercase mb-3">Visual Storytelling</div>
+            <h3 class="text-xl font-serif font-bold text-white mb-2">Ray Film & Art Guild</h3>
+            <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+              Screening timeless classics from Satyajit Ray, Mrinal Sen, and Ritwik Ghatak with English subtitles and panel discussions for all cinema lovers.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 text-xs text-gray-400">
+            Weekend Film Club on OMR
+          </div>
+        </div>
+
+        <!-- Card 4: Culinary Harmony (Anandamela) -->
+        <div class="card-glass p-6 rounded-2xl md:col-span-2 flex flex-col justify-between">
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase mb-3">Culinary Exchange</div>
+            <h3 class="text-2xl font-serif font-bold text-white mb-2">Anandamela & The Taste of Bengal</h3>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              From authentic *Shorshe Ilish*, *Kosha Mangsho*, and *Mishti Doi* to collaborative food festivals introducing Bengali cuisine to our Tamil and South Indian friends.
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10 text-xs text-dcpca-goldLight font-medium">
+            <span>🍲 Home Cook Showcases</span> • <span>🍮 Sweet Making Workshops</span> • <span>🌾 Maha Bhog Distribution</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Cultural Confluence: Bengal & Tamil Nadu Inclusion Section -->
+  <section id="inclusion" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="card-glass rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-dcpca-gold/30">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Universal Fellowship</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2 mb-6">
+            Why Our South Indian Neighbors Call DCPCA Home
+          </h2>
+          <div class="space-y-4 text-gray-300 text-sm leading-relaxed">
+            <p>
+              <strong class="text-white">Shared Devotion to the Divine Mother (Shakti):</strong> While Bengal rejoices in Durga Puja, Tamil Nadu celebrates Navratri and Golu. We converge on common ground: honouring feminine divine strength and cosmic light.
+            </p>
+            <p>
+              <strong class="text-white">Mutual Love for Classical Arts:</strong> The intricate rhythms of Carnatic music and Bharatanatyam share deep respect with Dhrupad, Rabindra Sangeet, and Gaudiya Nritya.
+            </p>
+            <p>
+              <strong class="text-white">Warmth & Open Hospitality:</strong> Every cultural evening at DCPCA includes multi-lingual announcements (Tamil, English, Bengali) so that everyone feels completely integrated.
+            </p>
+          </div>
+        </div>
+        <div class="bg-[#0A0812]/70 p-6 rounded-2xl border border-white/10 flex flex-col justify-center text-center">
+          <div class="text-5xl mb-3">🪔</div>
+          <h4 class="font-serif text-xl font-bold text-dcpca-goldLight mb-2">“யாதும் ஊரே யாவரும் கேளிர்”</h4>
+          <p class="text-xs text-gray-400 italic mb-4">“To us all towns are one, all people our kin.” (Kaniyan Pungundranar)</p>
+          <div class="w-12 h-0.5 bg-dcpca-terracotta mx-auto mb-4"></div>
+          <p class="font-bengali text-sm text-dcpca-gold">“সকলের সাথে মিলিলে তবেই সার্থকতা”</p>
+          <p class="text-xs text-gray-300 mt-2">DCPCA is the living confluence of these two proud, ancient cultures along Chennai’s coast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Upcoming Festivals & Schedule -->
+  <section id="events" class="py-20 bg-[#0E0B1A] border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Calendar of Celebrations</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Upcoming Events & Sharad Utsav</h2>
+        </div>
+        <a href="#members" class="text-dcpca-gold hover:text-white text-sm font-semibold transition-colors mt-4 md:mt-0 flex items-center gap-1">
+          Register for Event Passes <span>→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-glass p-6 rounded-2xl border-l-4 border-l-dcpca-terracotta">
+          <span class="text-xs font-mono text-dcpca-gold">Autumn Flagship</span>
+          <h3 class="text-xl font-serif font-bold text-white mt-1 mb-2">Sharad Utsav & Durga Puja</h3>
+          <p class="text-xs text-gray-400 mb-4">Shasthi to Dashami • Grand pandal, Dhunuchi Naach, Pushpanjali, & Community Bhog.</p>
+          <span class="text-xs px-2.5 py-1 rounded bg-dcpca-terracotta/20 text-dcpca-terracotta font-medium">OMR Pandal Grounds</span>
+        </div>
+
+        <div class="card-glass p-6 rounded-2xl border-l-4 border-l-dcpca-gold">
+          <span class="text-xs font-mono text-dcpca-gold">Spring Festival</span>
+          <h3 class="text-xl font-serif font-bold text-white mt-1 mb-2">Saraswati Puja & Hate Khori</h3>
+          <p class="text-xs text-gray-400 mb-4">Vasant Panchami • Initiation of toddlers into learning, art competitions, & Khichuri prasad.</p>
+          <span class="text-xs px-2.5 py-1 rounded bg-dcpca-gold/20 text-dcpca-gold font-medium">Community Hall, Classic Farms</span>
+        </div>
+
+        <div class="card-glass p-6 rounded-2xl border-l-4 border-l-purple-500">
+          <span class="text-xs font-mono text-purple-400">Cultural Tribute</span>
+          <h3 class="text-xl font-serif font-bold text-white mt-1 mb-2">Rabindra-Nazrul Jayanti</h3>
+          <p class="text-xs text-gray-400 mb-4">Baisakh Celebration • Dance dramas (Chitrangada/Tasher Desh), poetry recitals, and chorus.</p>
+          <span class="text-xs px-2.5 py-1 rounded bg-purple-500/20 text-purple-300 font-medium">Auditorium, Sholinganallur</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Member Onboarding & Final Action Fold -->
+  <section id="members" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
+    <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-dcpca-terracotta to-dcpca-gold flex items-center justify-center mx-auto mb-6 text-3xl shadow-xl">
+      🌺
+    </div>
+    <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mb-4">
+      Be Part of Our Vibrant Family
+    </h2>
+    <p class="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-8">
+      Join hands with hundreds of families across Dakshin Chennai. Participate in cultural performances, volunteer for festival organization, or simply immerse yourself in the joy of communion.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <button onclick="document.getElementById('auth-button').click()" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-dcpca-terracotta to-dcpca-gold text-black font-bold text-sm hover:scale-105 shadow-xl shadow-dcpca-terracotta/30 transition-all">
+        Join DCPCA via Google Account
+      </button>
+      <a href="mailto:dcpca.omr.official@gmail.com" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 text-white font-medium text-sm hover:bg-white/20 border border-white/10 transition-all">
+        Contact Office Bearers
+      </a>
+    </div>
+  </section>
+
+</Layout>
