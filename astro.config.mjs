@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.dcpca.in',
+  site: 'https://dcpca.github.io',
   base: '/',
   integrations: [
     tailwind({
