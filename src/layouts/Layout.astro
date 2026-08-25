@@ -13,11 +13,11 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     
     <title>{title}</title>
@@ -28,7 +28,6 @@ const {
     <meta property="og:url" content="https://www.dcpca.in/" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://www.dcpca.in/og-image.jpg" />
 
     <!-- Google Translate Element Script -->
     <script type="text/javascript">
@@ -48,7 +47,7 @@ const {
     <!-- Global Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#0A0812]/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3 group">
+        <a href="#" class="flex items-center gap-3 group">
           <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-dcpca-terracotta to-dcpca-gold flex items-center justify-center font-serif font-black text-black text-xl shadow-lg group-hover:scale-105 transition-transform">
             দ
           </div>
@@ -67,10 +66,16 @@ const {
           <a href="#members" class="text-gray-300 hover:text-dcpca-gold transition-colors">Membership</a>
         </nav>
 
-        <!-- Right Action: Translation Widget + Google Sign-In Trigger -->
+        <!-- Right Action: Translation Widget + Ambient Audio Toggle + Google Sign-In Trigger -->
         <div class="flex items-center gap-3">
           <div id="google_translate_element" class="hidden sm:block"></div>
           
+          <!-- Ambient Soundscape Audio Toggle Button -->
+          <button id="audio-toggle-btn" aria-label="Toggle Ambient Soundscape" class="p-2 rounded-full bg-white/10 hover:bg-white/20 text-dcpca-gold border border-dcpca-gold/30 transition-all flex items-center justify-center" title="Toggle Ambient Soundscape">
+            <span id="audio-icon-muted">🪘</span>
+            <span id="audio-icon-playing" class="hidden animate-pulse">🎶</span>
+          </button>
+
           <button id="auth-button" class="px-4 py-2 rounded-full bg-gradient-to-r from-dcpca-terracotta to-dcpca-gold text-black font-semibold text-xs md:text-sm tracking-wide shadow-md hover:shadow-dcpca-terracotta/40 hover:scale-105 transition-all duration-200">
             Sign In with Google
           </button>
@@ -157,6 +162,51 @@ const {
 
       loginTrigger?.addEventListener('click', () => {
         alert("Firebase / Google OAuth is connected. Hook your Google Apps Script / Firestore backend config in /src/config/firebase.ts");
+      });
+
+      // Web Audio API Procedural Dhak Sound Generator (Zero-dependency ambient soundscape)
+      let audioCtx: AudioContext | null = null;
+      let isPlaying = false;
+      let dhakInterval: any = null;
+
+      const toggleBtn = document.getElementById('audio-toggle-btn');
+      const iconMuted = document.getElementById('audio-icon-muted');
+      const iconPlaying = document.getElementById('audio-icon-playing');
+
+      function playDhakBeat() {
+        if (!audioCtx) audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(140, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.18);
+
+        gain.gain.setValueAtTime(0.5, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.2);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.2);
+      }
+
+      toggleBtn?.addEventListener('click', () => {
+        if (!isPlaying) {
+          isPlaying = true;
+          iconMuted?.classList.add('hidden');
+          iconPlaying?.classList.remove('hidden');
+          playDhakBeat();
+          dhakInterval = setInterval(playDhakBeat, 600);
+        } else {
+          isPlaying = false;
+          iconMuted?.classList.remove('hidden');
+          iconPlaying?.classList.add('hidden');
+          clearInterval(dhakInterval);
+        }
       });
     </script>
   </body>

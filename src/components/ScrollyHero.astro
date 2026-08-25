@@ -1,65 +1,74 @@
 ---
 // Apple-style Canvas Scrollytelling Hero Component
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
-<section id="scrolly-hero-container" class="relative w-full h-[280vh] bg-[#0A0812]">
+<section id="scrolly-hero-container" class="relative w-full h-[300vh] bg-[#0A0812] touch-pan-y">
   <!-- Sticky Pinning Viewport -->
   <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
     
     <!-- Canvas Drawing Layer -->
-    <canvas id="hero-scrub-canvas" class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-90"></canvas>
+    <canvas id="hero-scrub-canvas" class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-95"></canvas>
     
     <!-- Ambient Gradients -->
-    <div class="absolute inset-0 bg-gradient-to-b from-[#0A0812]/50 via-transparent to-[#0A0812] pointer-events-none z-10"></div>
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-dcpca-terracotta/20 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0A0812]/60 via-transparent to-[#0A0812] pointer-events-none z-10"></div>
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-dcpca-terracotta/20 rounded-full blur-[160px] pointer-events-none"></div>
 
     <!-- Scrollytelling Text Layers (GSAP Sequenced) -->
     
-    <!-- Slide 1: Welcome & Call to Milan -->
-    <div id="slide-1" class="absolute z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dcpca-gold/10 border border-dcpca-gold/30 text-dcpca-goldLight text-xs tracking-widest uppercase mb-4">
-        <span>✨</span> Dakshin Chennai Prabasi Cultural Association
+    <!-- Slide 1: Welcome & Call to Milan (Phase 1: 0-30%) -->
+    <div id="slide-1" class="absolute z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center transition-all duration-300">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dcpca-gold/10 border border-dcpca-gold/40 text-dcpca-goldLight text-xs font-semibold tracking-widest uppercase mb-4 shadow-lg backdrop-blur-md">
+        <span class="animate-pulse">✨</span> Dakshin Chennai Prabasi Cultural Association
       </div>
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-black tracking-tight text-white leading-tight">
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-black tracking-tight text-white leading-tight drop-shadow-2xl">
         উৎসব সবার, <span class="text-gold-gradient">মিলন সবার</span>
       </h1>
-      <p class="font-bengali text-lg sm:text-2xl text-dcpca-goldLight/90 mt-4 max-w-2xl">
+      <p class="font-bengali text-lg sm:text-2xl text-dcpca-goldLight/90 mt-4 max-w-2xl leading-relaxed">
         “মিলনের মধ্যেই সত্যের প্রকাশ— সেই মিলনের মধ্যেই সত্যকে অনুভব করা উৎসবের সম্পূর্ণতা।”
       </p>
-      <p class="text-gray-400 text-sm sm:text-base mt-2 font-light">
+      <p class="text-gray-300 text-sm sm:text-base mt-2 font-light max-w-xl">
         Where Bengal’s soulful artistic legacy thrives along the Coromandel Coast of Chennai.
       </p>
       
       <div class="mt-8 flex flex-wrap gap-4 justify-center">
-        <a href="#events" class="px-7 py-3 rounded-full bg-dcpca-terracotta text-white font-semibold text-sm hover:bg-dcpca-crimson shadow-lg shadow-dcpca-terracotta/30 transition-all hover:scale-105">
+        <a href={`${baseUrl}#events`} class="px-8 py-3.5 rounded-full bg-gradient-to-r from-dcpca-terracotta to-dcpca-gold text-black font-bold text-sm hover:scale-105 shadow-xl shadow-dcpca-terracotta/30 transition-all">
           Explore Sharad Utsav
         </a>
-        <a href="#philosophy" class="px-7 py-3 rounded-full bg-white/10 text-white font-semibold text-sm hover:bg-white/20 border border-white/10 backdrop-blur-sm transition-all">
+        <a href={`${baseUrl}#philosophy`} class="px-8 py-3.5 rounded-full bg-white/10 text-white font-semibold text-sm hover:bg-white/20 border border-white/15 backdrop-blur-md transition-all">
           Our Philosophy (Utsab)
         </a>
       </div>
     </div>
 
-    <!-- Slide 2: Rabindranath Tagore's Vision -->
-    <div id="slide-2" class="absolute z-20 text-center px-6 max-w-3xl mx-auto opacity-0 translate-y-12 pointer-events-none">
-      <span class="text-xs font-mono uppercase tracking-widest text-dcpca-terracotta">Tagorean Ideals</span>
-      <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2 mb-4">
-        Beyond Solitary Faith into <span class="text-terracotta-gradient">Universal Communion</span>
-      </h2>
-      <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-        Tagore reminded us that festivals exist to shatter our daily insular boundaries. DCPCA brings this living spirit to life through literature, music, and joyous celebration.
-      </p>
+    <!-- Slide 2: Rabindranath Tagore's Vision (Phase 2: 30-65%) -->
+    <div id="slide-2" class="absolute z-20 text-center px-6 sm:px-10 max-w-3xl mx-auto opacity-0 translate-y-12 pointer-events-none">
+      <div class="card-glass p-8 sm:p-12 rounded-3xl border border-dcpca-gold/30 backdrop-blur-xl shadow-2xl">
+        <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Tagorean Ideals</span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2 mb-4">
+          Beyond Solitary Faith into <span class="text-terracotta-gradient">Universal Communion</span>
+        </h2>
+        <p class="font-bengali text-dcpca-goldLight text-lg mb-3">“উৎসব একলার নহে, মিলনের মধ্যেই সত্যের প্রকাশ”</p>
+        <p class="text-gray-300 text-sm sm:text-base leading-relaxed font-light">
+          Tagore reminded us that festivals exist to shatter our daily insular boundaries. DCPCA brings this living spirit to life through literature, music, and joyous celebration.
+        </p>
+      </div>
     </div>
 
-    <!-- Slide 3: Cultural Confluence (Chennai & Bengal) -->
-    <div id="slide-3" class="absolute z-20 text-center px-6 max-w-3xl mx-auto opacity-0 translate-y-12 pointer-events-none">
-      <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Cultural Harmony</span>
-      <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2 mb-4">
-        The Confluence on <span class="text-gold-gradient">Chennai's IT Corridor</span>
-      </h2>
-      <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-        From the reverberating rhythms of the Dhak to the divine cadence of Carnatic music, we celebrate the shared devotion to Shakti, arts, and humanity.
-      </p>
+    <!-- Slide 3: Cultural Confluence (Phase 3: 65-100%) -->
+    <div id="slide-3" class="absolute z-20 text-center px-6 sm:px-10 max-w-3xl mx-auto opacity-0 translate-y-12 pointer-events-none">
+      <div class="card-glass p-8 sm:p-12 rounded-3xl border border-dcpca-terracotta/30 backdrop-blur-xl shadow-2xl">
+        <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Cultural Harmony</span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2 mb-4">
+          The Confluence on <span class="text-gold-gradient">Chennai's IT Corridor</span>
+        </h2>
+        <p class="text-gray-300 text-sm sm:text-base leading-relaxed font-light mb-4">
+          From the reverberating rhythms of the Dhak to the divine cadence of Carnatic music, we celebrate the shared devotion to Shakti, arts, and humanity along OMR & ECR.
+        </p>
+        <a href={`${baseUrl}#inclusion`} class="inline-block px-7 py-3 rounded-full bg-dcpca-gold text-black font-bold text-xs uppercase tracking-wider hover:bg-white transition-all shadow-lg">
+          Discover Confluence
+        </a>
+      </div>
     </div>
 
     <!-- Scroll Indicator -->
@@ -74,93 +83,163 @@
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
+
   gsap.registerPlugin(ScrollTrigger);
 
   const canvas = document.getElementById("hero-scrub-canvas") as HTMLCanvasElement;
   if (canvas) {
     const ctx = canvas.getContext("2d");
     
-    // Set high-res canvas dimensions
+    let viewWidth = window.innerWidth;
+    let viewHeight = window.innerHeight;
+
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      viewWidth = window.innerWidth;
+      viewHeight = window.innerHeight;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = viewWidth * dpr;
+      canvas.height = viewHeight * dpr;
+      if (ctx) ctx.scale(dpr, dpr);
     };
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Dynamic Procedural Canvas Animation for zero-asset loading lag
-    // Renders particle mandala + traditional Alpona radiance that scrubs with scroll
+    // Particle simulation data structures for Kasht (Kash flower petals / autumn spark particles)
+    interface Particle {
+      x: number;
+      y: number;
+      size: number;
+      speedX: number;
+      speedY: number;
+      alpha: number;
+      color: string;
+      angle: number;
+      angularSpeed: number;
+    }
+
+    const kashtParticles: Particle[] = [];
+    const particleCount = 65;
+    for (let i = 0; i < particleCount; i++) {
+      kashtParticles.push({
+        x: Math.random() * viewWidth,
+        y: Math.random() * viewHeight,
+        size: Math.random() * 3.5 + 1,
+        speedX: (Math.random() - 0.5) * 0.8,
+        speedY: (Math.random() - 0.5) * 0.8 - 0.2,
+        alpha: Math.random() * 0.7 + 0.3,
+        color: i % 3 === 0 ? "245, 197, 66" : i % 3 === 1 ? "217, 83, 47" : "255, 255, 255",
+        angle: Math.random() * Math.PI * 2,
+        angularSpeed: (Math.random() - 0.5) * 0.02
+      });
+    }
+
     let scrollProgress = { value: 0 };
 
-    function drawMandala(p: number) {
+    function renderEngine(p: number) {
       if (!ctx) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const cx = canvas.width / 2;
-      const cy = canvas.height / 2;
-      const baseRadius = Math.min(canvas.width, canvas.height) * 0.28;
+      ctx.clearRect(0, 0, viewWidth, viewHeight);
 
-      // Outer glowing ring
+      const cx = viewWidth / 2;
+      const cy = viewHeight / 2;
+      const baseRadius = Math.min(viewWidth, viewHeight) * (0.24 + p * 0.08);
+
+      // 1. Draw Golden Alpona Geometric Sacred Mandala
       ctx.save();
       ctx.translate(cx, cy);
-      ctx.rotate(p * Math.PI * 2);
+      ctx.rotate(p * Math.PI * 1.5);
 
-      const rings = 8;
+      // Radial Alpona rings
+      const rings = 6;
       for (let r = 1; r <= rings; r++) {
-        const radius = (baseRadius / rings) * r * (1 + p * 0.3);
-        const petals = 12 + r * 4;
+        const radius = (baseRadius / rings) * r;
+        const petals = 8 + r * 6;
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(229, 169, 60, ${0.15 + (r / rings) * 0.25})`;
+        ctx.strokeStyle = `rgba(229, 169, 60, ${0.12 + (r / rings) * 0.28})`;
         ctx.lineWidth = 1.2;
 
         for (let i = 0; i <= petals; i++) {
           const theta = (i / petals) * Math.PI * 2;
-          const wave = Math.sin(theta * 6 + p * 10) * 8;
-          const x = (radius + wave) * Math.cos(theta);
-          const y = (radius + wave) * Math.sin(theta);
+          const amplitude = Math.sin(theta * 8 + p * 12) * (6 + r * 2);
+          const x = (radius + amplitude) * Math.cos(theta);
+          const y = (radius + amplitude) * Math.sin(theta);
           if (i === 0) ctx.moveTo(x, y);
           else ctx.lineTo(x, y);
         }
         ctx.stroke();
-      }
 
-      // Traditional Dhak & Ray particles
-      const particleCount = 40;
-      for (let i = 0; i < particleCount; i++) {
-        const angle = (i / particleCount) * Math.PI * 2 + p * 4;
-        const dist = baseRadius * (0.6 + 0.8 * Math.sin(i + p * 8));
-        const px = Math.cos(angle) * dist;
-        const py = Math.sin(angle) * dist;
+        // Alpona motifs (lotus petal accents)
+        if (r === rings || r === Math.floor(rings / 2)) {
+          for (let i = 0; i < petals; i += 2) {
+            const theta = (i / petals) * Math.PI * 2;
+            const px = radius * Math.cos(theta);
+            const py = radius * Math.sin(theta);
+            ctx.beginPath();
+            ctx.arc(px, py, 3 + r * 0.5, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(217, 83, 47, ${0.4 + p * 0.4})`;
+            ctx.fill();
+          }
+        }
+      }
+      ctx.restore();
+
+      // 2. Coastal Shoreline Wave Motion (Connecting Chennai Coast with Bengal's Autumn)
+      ctx.save();
+      ctx.beginPath();
+      ctx.strokeStyle = `rgba(245, 197, 66, ${0.15 + Math.sin(p * Math.PI) * 0.2})`;
+      ctx.lineWidth = 1.5;
+      const waveY = viewHeight * 0.85;
+      for (let x = 0; x <= viewWidth; x += 10) {
+        const y = waveY + Math.sin(x * 0.005 + p * 10) * 20 + Math.cos(x * 0.01 - p * 5) * 10;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      // 3. Kasht / Golden Spark Floating Particles
+      for (let i = 0; i < kashtParticles.length; i++) {
+        const pt = kashtParticles[i];
+        pt.angle += pt.angularSpeed;
+        const orbitRadius = 15 * Math.sin(p * Math.PI * 2 + i);
+        const drawX = pt.x + Math.cos(pt.angle) * orbitRadius;
+        const drawY = (pt.y + Math.sin(pt.angle) * orbitRadius - p * 80) % viewHeight;
+        const finalY = drawY < 0 ? drawY + viewHeight : drawY;
+
         ctx.beginPath();
-        ctx.arc(px, py, 2 + Math.sin(i) * 1.5, 0, Math.PI * 2);
-        ctx.fillStyle = i % 2 === 0 ? "rgba(217, 83, 47, 0.7)" : "rgba(245, 197, 66, 0.8)";
+        ctx.arc(drawX, finalY, pt.size * (1 + p * 0.5), 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${pt.color}, ${pt.alpha * (0.6 + 0.4 * Math.sin(p * 5 + i))})`;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = `rgba(245, 197, 66, 0.8)`;
         ctx.fill();
       }
-
-      ctx.restore();
     }
 
-    // Initial draw
-    drawMandala(0);
+    renderEngine(0);
 
-    // ScrollTrigger Timeline
+    // GSAP ScrollTrigger Timeline
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#scrolly-hero-container",
         start: "top top",
         end: "bottom bottom",
-        scrub: 0.6,
+        scrub: 0.5,
       },
       onUpdate: () => {
-        drawMandala(scrollProgress.value);
+        renderEngine(scrollProgress.value);
       }
     });
 
-    // Animate progress and slides
+    // Phase 1 (0-30%), Phase 2 (30-65%), Phase 3 (65-100%)
     tl.to(scrollProgress, { value: 1, ease: "none" }, 0)
-      .to("#slide-1", { opacity: 0, y: -40, pointerEvents: "none", duration: 0.3 }, 0.15)
-      .to("#slide-2", { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.3 }, 0.35)
-      .to("#slide-2", { opacity: 0, y: -40, pointerEvents: "none", duration: 0.3 }, 0.60)
-      .to("#slide-3", { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.3 }, 0.75)
-      .to("#slide-3", { opacity: 0.2, y: -20, duration: 0.2 }, 0.95);
+      // Slide 1 out
+      .to("#slide-1", { opacity: 0, y: -50, pointerEvents: "none", duration: 0.25 }, 0.18)
+      // Slide 2 in
+      .to("#slide-2", { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.25 }, 0.32)
+      // Slide 2 out
+      .to("#slide-2", { opacity: 0, y: -50, pointerEvents: "none", duration: 0.25 }, 0.58)
+      // Slide 3 in
+      .to("#slide-3", { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.25 }, 0.68)
+      // Slide 3 fade out at end
+      .to("#slide-3", { opacity: 0.3, y: -20, duration: 0.2 }, 0.95);
   }
 </script>
