@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ScrollyHero from '../components/ScrollyHero.astro';
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <Layout title="DCPCA | Dakshin Chennai Prabasi Cultural Association - উৎসব সবার, মিলন সবার">
@@ -8,7 +10,38 @@ import ScrollyHero from '../components/ScrollyHero.astro';
   <!-- 1. Apple-style Scrollytelling Hero -->
   <ScrollyHero />
 
-  <!-- 2. Philosophical Anchor Section (Rabindranath Tagore's Utsab) -->
+  <!-- 2. Sharadotsav / Durga Puja Interactive Countdown Widget -->
+  <section class="relative -mt-20 z-30 max-w-4xl mx-auto px-4">
+    <div class="card-glass rounded-2xl p-6 border border-dcpca-gold/40 shadow-2xl backdrop-blur-xl bg-[#120F24]/90 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="text-center sm:text-left">
+        <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Upcoming Milestone</span>
+        <h3 class="text-xl font-serif font-bold text-white flex items-center gap-2 mt-0.5">
+          <span>🌺</span> Sharadotsav & Durga Puja 2026
+        </h3>
+        <p class="text-xs text-gray-300 mt-1">Countdown to Maha Shasthi along Chennai's Coromandel Coast</p>
+      </div>
+
+      <!-- Countdown Numbers -->
+      <div id="puja-countdown" class="flex items-center gap-3 sm:gap-4 text-center">
+        <div class="bg-black/40 border border-white/10 px-3.5 py-2 rounded-xl min-w-[60px]">
+          <span id="cd-days" class="text-2xl font-serif font-bold text-dcpca-gold block">--</span>
+          <span class="text-[9px] uppercase tracking-wider text-gray-400">Days</span>
+        </div>
+        <span class="text-dcpca-gold font-bold text-lg">:</span>
+        <div class="bg-black/40 border border-white/10 px-3.5 py-2 rounded-xl min-w-[60px]">
+          <span id="cd-hours" class="text-2xl font-serif font-bold text-dcpca-gold block">--</span>
+          <span class="text-[9px] uppercase tracking-wider text-gray-400">Hours</span>
+        </div>
+        <span class="text-dcpca-gold font-bold text-lg">:</span>
+        <div class="bg-black/40 border border-white/10 px-3.5 py-2 rounded-xl min-w-[60px]">
+          <span id="cd-mins" class="text-2xl font-serif font-bold text-dcpca-gold block">--</span>
+          <span class="text-[9px] uppercase tracking-wider text-gray-400">Mins</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Philosophical Anchor Section (Rabindranath Tagore's Utsab) -->
   <section id="philosophy" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Living Philosophy</span>
@@ -20,7 +53,7 @@ import ScrollyHero from '../components/ScrollyHero.astro';
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Pillar 1: Milan -->
-      <div class="card-glass p-8 rounded-2xl relative overflow-hidden group">
+      <div class="tilt-card card-glass p-8 rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 border border-white/10 hover:border-dcpca-gold/50">
         <div class="text-4xl mb-4 text-dcpca-gold">🤝</div>
         <h3 class="text-xl font-serif font-bold text-white mb-2">মিলন (Milan — Union)</h3>
         <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“একলার উৎসব হইলে চলে না”</p>
@@ -30,7 +63,7 @@ import ScrollyHero from '../components/ScrollyHero.astro';
       </div>
 
       <!-- Pillar 2: Prem & Ananda -->
-      <div class="card-glass p-8 rounded-2xl relative overflow-hidden group">
+      <div class="tilt-card card-glass p-8 rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 border border-white/10 hover:border-dcpca-terracotta/50">
         <div class="text-4xl mb-4 text-dcpca-terracotta">✨</div>
         <h3 class="text-xl font-serif font-bold text-white mb-2">আনন্দ ও প্রেম (Joy & Love)</h3>
         <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“আনন্দরূপমমৃতং যদ্বিভাতি”</p>
@@ -40,7 +73,7 @@ import ScrollyHero from '../components/ScrollyHero.astro';
       </div>
 
       <!-- Pillar 3: Tyag & Inclusivity -->
-      <div class="card-glass p-8 rounded-2xl relative overflow-hidden group">
+      <div class="tilt-card card-glass p-8 rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 border border-white/10 hover:border-amber-300/50">
         <div class="text-4xl mb-4 text-amber-300">🌿</div>
         <h3 class="text-xl font-serif font-bold text-white mb-2">উদারতা (Universal Harmony)</h3>
         <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“সেদিন একলার গৃহ সকলের গৃহ হয়”</p>
@@ -51,7 +84,7 @@ import ScrollyHero from '../components/ScrollyHero.astro';
     </div>
   </section>
 
-  <!-- 3. Bento Grid: Cultural Programs & Heritage Hub -->
+  <!-- 4. Bento Grid: Cultural Programs & Heritage Hub -->
   <section id="heritage" class="py-20 bg-[#0E0B1A] border-y border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -64,7 +97,7 @@ import ScrollyHero from '../components/ScrollyHero.astro';
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Card 1: Rabindranath & Nazrul -->
-        <div class="card-glass p-6 rounded-2xl md:col-span-2 flex flex-col justify-between">
+        <div class="tilt-card card-glass p-6 rounded-2xl md:col-span-2 flex flex-col justify-between border border-white/10 hover:border-dcpca-gold/50 cursor-pointer">
           <div>
             <div class="inline-block px-3 py-1 rounded-full bg-dcpca-gold/20 text-dcpca-gold text-xs font-semibold uppercase mb-3">Literary & Performing Arts</div>
             <h3 class="text-2xl font-serif font-bold text-white mb-2">Rabindra & Nazrul Jayanti Academies</h3>
@@ -78,7 +111,7 @@ import ScrollyHero from '../components/ScrollyHero.astro';
         </div>
 
         <!-- Card 2: Swami Vivekananda & Vidyasagar -->
-        <div class="card-glass p-6 rounded-2xl flex flex-col justify-between">
+        <div class="tilt-card card-glass p-6 rounded-2xl flex flex-col justify-between border border-white/10 hover:border-dcpca-terracotta/50 cursor-pointer">
           <div>
             <div class="inline-block px-3 py-1 rounded-full bg-dcpca-terracotta/20 text-dcpca-terracotta text-xs font-semibold uppercase mb-3">Philosophy & Values</div>
             <h3 class="text-xl font-serif font-bold text-white mb-2">Vivekananda & Vidyasagar Youth Forum</h3>
@@ -92,7 +125,7 @@ import ScrollyHero from '../components/ScrollyHero.astro';
         </div>
 
         <!-- Card 3: Satyajit Ray Cinema & Arts -->
-        <div class="card-glass p-6 rounded-2xl flex flex-col justify-between">
+        <div class="tilt-card card-glass p-6 rounded-2xl flex flex-col justify-between border border-white/10 hover:border-purple-400/50 cursor-pointer">
           <div>
             <div class="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-semibold uppercase mb-3">Visual Storytelling</div>
             <h3 class="text-xl font-serif font-bold text-white mb-2">Ray Film & Art Guild</h3>
@@ -106,7 +139,7 @@ import ScrollyHero from '../components/ScrollyHero.astro';
         </div>
 
         <!-- Card 4: Culinary Harmony (Anandamela) -->
-        <div class="card-glass p-6 rounded-2xl md:col-span-2 flex flex-col justify-between">
+        <div class="tilt-card card-glass p-6 rounded-2xl md:col-span-2 flex flex-col justify-between border border-white/10 hover:border-amber-400/50 cursor-pointer">
           <div>
             <div class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase mb-3">Culinary Exchange</div>
             <h3 class="text-2xl font-serif font-bold text-white mb-2">Anandamela & The Taste of Bengal</h3>
@@ -122,7 +155,7 @@ import ScrollyHero from '../components/ScrollyHero.astro';
     </div>
   </section>
 
-  <!-- 4. Cultural Confluence: Bengal & Tamil Nadu Inclusion Section -->
+  <!-- 5. Cultural Confluence: Bengal & Tamil Nadu Inclusion Section -->
   <section id="inclusion" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="card-glass rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-dcpca-gold/30">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -155,7 +188,7 @@ import ScrollyHero from '../components/ScrollyHero.astro';
     </div>
   </section>
 
-  <!-- 5. Upcoming Festivals & Schedule -->
+  <!-- 6. Upcoming Festivals & Schedule -->
   <section id="events" class="py-20 bg-[#0E0B1A] border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -163,27 +196,27 @@ import ScrollyHero from '../components/ScrollyHero.astro';
           <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Calendar of Celebrations</span>
           <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Upcoming Events & Sharad Utsav</h2>
         </div>
-        <a href="#members" class="text-dcpca-gold hover:text-white text-sm font-semibold transition-colors mt-4 md:mt-0 flex items-center gap-1">
+        <a href={`${baseUrl}#members`} class="text-dcpca-gold hover:text-white text-sm font-semibold transition-colors mt-4 md:mt-0 flex items-center gap-1">
           Register for Event Passes <span>→</span>
         </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="card-glass p-6 rounded-2xl border-l-4 border-l-dcpca-terracotta">
+        <div class="tilt-card card-glass p-6 rounded-2xl border-l-4 border-l-dcpca-terracotta cursor-pointer">
           <span class="text-xs font-mono text-dcpca-gold">Autumn Flagship</span>
           <h3 class="text-xl font-serif font-bold text-white mt-1 mb-2">Sharad Utsav & Durga Puja</h3>
           <p class="text-xs text-gray-400 mb-4">Shasthi to Dashami • Grand pandal, Dhunuchi Naach, Pushpanjali, & Community Bhog.</p>
           <span class="text-xs px-2.5 py-1 rounded bg-dcpca-terracotta/20 text-dcpca-terracotta font-medium">OMR Pandal Grounds</span>
         </div>
 
-        <div class="card-glass p-6 rounded-2xl border-l-4 border-l-dcpca-gold">
+        <div class="tilt-card card-glass p-6 rounded-2xl border-l-4 border-l-dcpca-gold cursor-pointer">
           <span class="text-xs font-mono text-dcpca-gold">Spring Festival</span>
           <h3 class="text-xl font-serif font-bold text-white mt-1 mb-2">Saraswati Puja & Hate Khori</h3>
           <p class="text-xs text-gray-400 mb-4">Vasant Panchami • Initiation of toddlers into learning, art competitions, & Khichuri prasad.</p>
           <span class="text-xs px-2.5 py-1 rounded bg-dcpca-gold/20 text-dcpca-gold font-medium">Community Hall, Classic Farms</span>
         </div>
 
-        <div class="card-glass p-6 rounded-2xl border-l-4 border-l-purple-500">
+        <div class="tilt-card card-glass p-6 rounded-2xl border-l-4 border-l-purple-500 cursor-pointer">
           <span class="text-xs font-mono text-purple-400">Cultural Tribute</span>
           <h3 class="text-xl font-serif font-bold text-white mt-1 mb-2">Rabindra-Nazrul Jayanti</h3>
           <p class="text-xs text-gray-400 mb-4">Baisakh Celebration • Dance dramas (Chitrangada/Tasher Desh), poetry recitals, and chorus.</p>
@@ -193,7 +226,7 @@ import ScrollyHero from '../components/ScrollyHero.astro';
     </div>
   </section>
 
-  <!-- 6. Member Onboarding & Final Action Fold -->
+  <!-- 7. Member Onboarding & Final Action Fold -->
   <section id="members" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
     <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-dcpca-terracotta to-dcpca-gold flex items-center justify-center mx-auto mb-6 text-3xl shadow-xl">
       🌺
@@ -214,5 +247,54 @@ import ScrollyHero from '../components/ScrollyHero.astro';
       </a>
     </div>
   </section>
+
+  <script>
+    // 1. Interactive 3D Cursor-Tracking Card Tilt Effect
+    const tiltCards = document.querySelectorAll('.tilt-card');
+    tiltCards.forEach((card) => {
+      const el = card as HTMLElement;
+      el.addEventListener('mousemove', (e: MouseEvent) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
+
+        el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      });
+    });
+
+    // 2. Interactive Countdown Widget for Durga Puja
+    const targetDate = new Date("2026-10-17T00:00:00+05:30").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+
+        const cdDays = document.getElementById('cd-days');
+        const cdHours = document.getElementById('cd-hours');
+        const cdMins = document.getElementById('cd-mins');
+
+        if (cdDays) cdDays.innerText = days < 10 ? `0${days}` : `${days}`;
+        if (cdHours) cdHours.innerText = hours < 10 ? `0${hours}` : `${hours}`;
+        if (cdMins) cdMins.innerText = minutes < 10 ? `0${minutes}` : `${minutes}`;
+      }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+  </script>
 
 </Layout>
