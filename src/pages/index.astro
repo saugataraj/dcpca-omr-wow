@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ScrollyHero from '../components/ScrollyHero.astro';
+import YearArchive from '../components/YearArchive.astro';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
-<Layout title="DCPCA | Dakshin Chennai Prabasi Cultural Association - উৎসব সবার, মিলন সবার">
+<Layout title="DCPCA | Dakshin Chennai Prabasi Cultural Association - Celebrating 13 Years of Sharadotsav">
   
-  <!-- 1. Apple-style Scrollytelling Hero -->
+  <!-- 1. Apple-style Scrollytelling Hero & Milestone 13th Sharadotsav Overhaul -->
   <ScrollyHero />
 
   <!-- 2. Sharadotsav / Durga Puja Interactive Countdown Widget -->
@@ -16,7 +17,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
       <div class="text-center sm:text-left">
         <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Upcoming Milestone</span>
         <h3 class="text-xl font-serif font-bold text-white flex items-center gap-2 mt-0.5">
-          <span>🌺</span> Sharadotsav & Durga Puja 2026
+          <span>🌺</span> Sharadotsav & Durga Puja 2026 (13th Year)
         </h3>
         <p class="text-xs text-gray-300 mt-1">Countdown to Maha Shasthi along Chennai's Coromandel Coast</p>
       </div>
@@ -41,7 +42,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
     </div>
   </section>
 
-  <!-- 3. Philosophical Anchor Section (Rabindranath Tagore's Utsab) -->
+  <!-- 3. Dynamic 12-Year Retrospective Gallery -->
+  <YearArchive />
+
+  <!-- 4. Philosophical Anchor Section (Rabindranath Tagore's Utsab) -->
   <section id="philosophy" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Living Philosophy</span>
@@ -55,7 +59,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
       <!-- Pillar 1: Milan -->
       <div class="tilt-card card-glass p-8 rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 border border-white/10 hover:border-dcpca-gold/50">
         <div class="text-4xl mb-4 text-dcpca-gold">🤝</div>
-        <h3 class="text-xl font-serif font-bold text-white mb-2">মিলন (Milan — Union)</h3>
+        <h3 class="text-xl font-serif font-bold text-white mb-2">মিলন (Milan — Sacred Union)</h3>
         <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“একলার উৎসব হইলে চলে না”</p>
         <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
           Daily life scatters us into isolated pursuits. A festival is the sacred moment when boundaries dissolve, bringing families, neighbors, and strangers together in joy.
@@ -65,58 +69,58 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
       <!-- Pillar 2: Prem & Ananda -->
       <div class="tilt-card card-glass p-8 rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 border border-white/10 hover:border-dcpca-terracotta/50">
         <div class="text-4xl mb-4 text-dcpca-terracotta">✨</div>
-        <h3 class="text-xl font-serif font-bold text-white mb-2">আনন্দ ও প্রেম (Joy & Love)</h3>
+        <h3 class="text-xl font-serif font-bold text-white mb-2">প্রেম ও আনন্দ (Love & Pure Joy)</h3>
         <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“আনন্দরূপমমৃতং যদ্বিভাতি”</p>
         <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-          Beyond dry rituals, true celebration is the experience of boundless joy and affection. We celebrate art, poetry, and shared meals with open hearts.
+          Beyond dry rituals, true celebration is the experience of boundless joy and affection. We celebrate art, poetry, music, and shared meals with open hearts.
         </p>
       </div>
 
-      <!-- Pillar 3: Tyag & Inclusivity -->
+      <!-- Pillar 3: Universal Harmony -->
       <div class="tilt-card card-glass p-8 rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 border border-white/10 hover:border-amber-300/50">
         <div class="text-4xl mb-4 text-amber-300">🌿</div>
-        <h3 class="text-xl font-serif font-bold text-white mb-2">উদারতা (Universal Harmony)</h3>
+        <h3 class="text-xl font-serif font-bold text-white mb-2">উদারতা (Universal Inclusion)</h3>
         <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“সেদিন একলার গৃহ সকলের গৃহ হয়”</p>
         <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-          On festival days, our home belongs to everyone. We welcome non-Bengali brothers, sisters, and Chennai residents with warmth and equal honor.
+          On festival days, our home belongs to everyone. We welcome non-Bengali brothers, sisters, and Chennai residents with equal warmth, respect, and honor.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- 4. Bento Grid: Cultural Programs & Heritage Hub -->
+  <!-- 5. Bento Grid: Cultural Programs & Next-Gen Heritage Hub -->
   <section id="heritage" class="py-20 bg-[#0E0B1A] border-y border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-xs font-mono uppercase tracking-widest text-dcpca-terracotta">Heritage & Youth</span>
         <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">
-          Nurturing Bengal's Icons for Next-Gen
+          Next-Gen Heritage Hub
         </h2>
         <p class="text-gray-400 text-sm mt-3">Connecting our children raised in Chennai with the timeless thoughts of Bengal's greatest luminaries.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Card 1: Rabindranath & Nazrul -->
+        <!-- Card 1: Rabindra & Nazrul -->
         <div class="tilt-card card-glass p-6 rounded-2xl md:col-span-2 flex flex-col justify-between border border-white/10 hover:border-dcpca-gold/50 cursor-pointer">
           <div>
             <div class="inline-block px-3 py-1 rounded-full bg-dcpca-gold/20 text-dcpca-gold text-xs font-semibold uppercase mb-3">Literary & Performing Arts</div>
             <h3 class="text-2xl font-serif font-bold text-white mb-2">Rabindra & Nazrul Jayanti Academies</h3>
             <p class="text-gray-300 text-sm leading-relaxed mb-4">
-              Regular workshops for children and youth in Rabindra Sangeet, recitation, drama, and classical Bengali literature to instill deep intellectual and artistic roots.
+              Regular workshops for children and youth in Rabindra Sangeet, Nazrul Geeti, recitations, drama, and classical Bengali literature to instill deep intellectual and artistic roots.
             </p>
           </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-white/10 text-xs text-dcpca-goldLight font-medium">
-            <span>📚 Storytelling Sessions</span> • <span>🎭 Annual Natok Stage</span> • <span>🎶 Vocal Training</span>
+          <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-white/10 text-xs text-dcpca-goldLight font-medium">
+            <span>📚 Storytelling Sessions</span> • <span>🎭 Annual Natok Stage</span> • <span>🎶 Vocal & Instrumental Workshops</span>
           </div>
         </div>
 
-        <!-- Card 2: Swami Vivekananda & Vidyasagar -->
+        <!-- Card 2: Swami Vivekananda & Forum -->
         <div class="tilt-card card-glass p-6 rounded-2xl flex flex-col justify-between border border-white/10 hover:border-dcpca-terracotta/50 cursor-pointer">
           <div>
-            <div class="inline-block px-3 py-1 rounded-full bg-dcpca-terracotta/20 text-dcpca-terracotta text-xs font-semibold uppercase mb-3">Philosophy & Values</div>
-            <h3 class="text-xl font-serif font-bold text-white mb-2">Vivekananda & Vidyasagar Youth Forum</h3>
+            <div class="inline-block px-3 py-1 rounded-full bg-dcpca-terracotta/20 text-dcpca-terracotta text-xs font-semibold uppercase mb-3">Youth Philosophy</div>
+            <h3 class="text-xl font-serif font-bold text-white mb-2">Vivekananda Youth Forum</h3>
             <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-              Discourses on character building, moral courage, rationalism, and compassion for students and teenagers.
+              Discourses on character building, moral courage, rationalism, and compassion for students and teenagers living along OMR.
             </p>
           </div>
           <div class="pt-4 border-t border-white/10 text-xs text-gray-400">
@@ -128,26 +132,26 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
         <div class="tilt-card card-glass p-6 rounded-2xl flex flex-col justify-between border border-white/10 hover:border-purple-400/50 cursor-pointer">
           <div>
             <div class="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-semibold uppercase mb-3">Visual Storytelling</div>
-            <h3 class="text-xl font-serif font-bold text-white mb-2">Ray Film & Art Guild</h3>
+            <h3 class="text-xl font-serif font-bold text-white mb-2">Satyajit Ray Film Guild</h3>
             <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-              Screening timeless classics from Satyajit Ray, Mrinal Sen, and Ritwik Ghatak with English subtitles and panel discussions for all cinema lovers.
+              Screening timeless cinema from Satyajit Ray, Mrinal Sen, and Ritwik Ghatak with English subtitles and panel discussions for all cinema enthusiasts.
             </p>
           </div>
           <div class="pt-4 border-t border-white/10 text-xs text-gray-400">
-            Weekend Film Club on OMR
+            Weekend Film Screenings on OMR
           </div>
         </div>
 
         <!-- Card 4: Culinary Harmony (Anandamela) -->
         <div class="tilt-card card-glass p-6 rounded-2xl md:col-span-2 flex flex-col justify-between border border-white/10 hover:border-amber-400/50 cursor-pointer">
           <div>
-            <div class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase mb-3">Culinary Exchange</div>
-            <h3 class="text-2xl font-serif font-bold text-white mb-2">Anandamela & The Taste of Bengal</h3>
+            <div class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase mb-3">Culinary Heritage</div>
+            <h3 class="text-2xl font-serif font-bold text-white mb-2">Anandamela & Culinary Exchange</h3>
             <p class="text-gray-300 text-sm leading-relaxed mb-4">
-              From authentic *Shorshe Ilish*, *Kosha Mangsho*, and *Mishti Doi* to collaborative food festivals introducing Bengali cuisine to our Tamil and South Indian friends.
+              From authentic *Shorshe Ilish*, *Kosha Mangsho*, and *Mishti Doi* to collaborative food festivals introducing traditional Bengali cuisine to our Tamil and South Indian friends.
             </p>
           </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-white/10 text-xs text-dcpca-goldLight font-medium">
+          <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-white/10 text-xs text-dcpca-goldLight font-medium">
             <span>🍲 Home Cook Showcases</span> • <span>🍮 Sweet Making Workshops</span> • <span>🌾 Maha Bhog Distribution</span>
           </div>
         </div>
@@ -155,78 +159,142 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
     </div>
   </section>
 
-  <!-- 5. Cultural Confluence: Bengal & Tamil Nadu Inclusion Section -->
-  <section id="inclusion" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <!-- 6. Cultural Confluence: Bengal & Tamil Nadu Harmony Section -->
+  <section id="confluence" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="card-glass rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-dcpca-gold/30">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
-          <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Universal Fellowship</span>
+          <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Cultural Confluence</span>
           <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2 mb-6">
-            Why Our South Indian Neighbors Call DCPCA Home
+            Connecting Bengal's Durga Puja with Tamil Nadu's Sharad Navratri & Golu
           </h2>
           <div class="space-y-4 text-gray-300 text-sm leading-relaxed">
             <p>
-              <strong class="text-white">Shared Devotion to the Divine Mother (Shakti):</strong> While Bengal rejoices in Durga Puja, Tamil Nadu celebrates Navratri and Golu. We converge on common ground: honouring feminine divine strength and cosmic light.
+              <strong class="text-white">Shared Divine Mother (Shakti) Worship:</strong> While Bengal rejoices in Durga Puja, Tamil Nadu celebrates Navratri and Golu. We converge on common ground: honoring feminine divine strength, light, and wisdom.
             </p>
             <p>
-              <strong class="text-white">Mutual Love for Classical Arts:</strong> The intricate rhythms of Carnatic music and Bharatanatyam share deep respect with Dhrupad, Rabindra Sangeet, and Gaudiya Nritya.
+              <strong class="text-white">Carnatic & Bengali Arts Synergy:</strong> The intricate rhythms of Carnatic ragas and Bharatanatyam share deep reverence with Dhrupad, Rabindra Sangeet, and Gaudiya Nritya.
             </p>
             <p>
-              <strong class="text-white">Warmth & Open Hospitality:</strong> Every cultural evening at DCPCA includes multi-lingual announcements (Tamil, English, Bengali) so that everyone feels completely integrated.
+              <strong class="text-white">Warmth & Multi-lingual Integration:</strong> Announcements and invitations at DCPCA are shared in Tamil, English, and Bengali so every guest feels truly welcomed.
             </p>
           </div>
         </div>
-        <div class="bg-[#0A0812]/70 p-6 rounded-2xl border border-white/10 flex flex-col justify-center text-center">
+
+        <div class="bg-[#0A0812]/80 p-6 sm:p-8 rounded-2xl border border-white/10 flex flex-col justify-center text-center">
           <div class="text-5xl mb-3">🪔</div>
-          <h4 class="font-serif text-xl font-bold text-dcpca-goldLight mb-2">“யாதும் ஊரே யாவரும் கேளிர்”</h4>
-          <p class="text-xs text-gray-400 italic mb-4">“To us all towns are one, all people our kin.” (Kaniyan Pungundranar)</p>
-          <div class="w-12 h-0.5 bg-dcpca-terracotta mx-auto mb-4"></div>
+          <h4 class="font-serif text-xl sm:text-2xl font-bold text-dcpca-goldLight mb-2">“யாதும் ஊரே யாவரும் கேளிர்”</h4>
+          <p class="text-xs text-gray-400 italic mb-4">“To us all towns are one, all people our kin.” — Kaniyan Pungundranar (Sangam Literature)</p>
+          <div class="w-16 h-0.5 bg-dcpca-terracotta mx-auto mb-4"></div>
           <p class="font-bengali text-sm text-dcpca-gold">“সকলের সাথে মিলিলে তবেই সার্থকতা”</p>
-          <p class="text-xs text-gray-300 mt-2">DCPCA is the living confluence of these two proud, ancient cultures along Chennai’s coast.</p>
+          <p class="text-xs text-gray-300 mt-2">DCPCA stands as a living confluence of two magnificent, ancient cultures on Chennai's Coromandel Coast.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. Upcoming Festivals & Schedule -->
-  <section id="events" class="py-20 bg-[#0E0B1A] border-t border-white/5">
+  <!-- 7. Festival Schedule & Ritual Calendar Section -->
+  <section id="schedule" class="py-20 bg-[#0E0B1A] border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-        <div>
-          <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Calendar of Celebrations</span>
-          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Upcoming Events & Sharad Utsav</h2>
-        </div>
-        <a href={`${baseUrl}#members`} class="text-dcpca-gold hover:text-white text-sm font-semibold transition-colors mt-4 md:mt-0 flex items-center gap-1">
-          Register for Event Passes <span>→</span>
-        </a>
+
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Festival Calendar</span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mt-2">
+          Festival Schedule & Ritual Calendar (2026)
+        </h2>
+        <p class="text-gray-400 text-sm mt-3">
+          Join us for daily pujas, cultural evenings, and community bhog. View our official calendar poster below.
+        </p>
+        <div class="w-20 h-1 bg-gradient-to-r from-dcpca-terracotta to-dcpca-gold mx-auto mt-4 rounded-full"></div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="tilt-card card-glass p-6 rounded-2xl border-l-4 border-l-dcpca-terracotta cursor-pointer">
-          <span class="text-xs font-mono text-dcpca-gold">Autumn Flagship</span>
-          <h3 class="text-xl font-serif font-bold text-white mt-1 mb-2">Sharad Utsav & Durga Puja</h3>
-          <p class="text-xs text-gray-400 mb-4">Shasthi to Dashami • Grand pandal, Dhunuchi Naach, Pushpanjali, & Community Bhog.</p>
-          <span class="text-xs px-2.5 py-1 rounded bg-dcpca-terracotta/20 text-dcpca-terracotta font-medium">OMR Pandal Grounds</span>
-        </div>
-
-        <div class="tilt-card card-glass p-6 rounded-2xl border-l-4 border-l-dcpca-gold cursor-pointer">
-          <span class="text-xs font-mono text-dcpca-gold">Spring Festival</span>
-          <h3 class="text-xl font-serif font-bold text-white mt-1 mb-2">Saraswati Puja & Hate Khori</h3>
-          <p class="text-xs text-gray-400 mb-4">Vasant Panchami • Initiation of toddlers into learning, art competitions, & Khichuri prasad.</p>
-          <span class="text-xs px-2.5 py-1 rounded bg-dcpca-gold/20 text-dcpca-gold font-medium">Community Hall, Classic Farms</span>
-        </div>
-
-        <div class="tilt-card card-glass p-6 rounded-2xl border-l-4 border-l-purple-500 cursor-pointer">
-          <span class="text-xs font-mono text-purple-400">Cultural Tribute</span>
-          <h3 class="text-xl font-serif font-bold text-white mt-1 mb-2">Rabindra-Nazrul Jayanti</h3>
-          <p class="text-xs text-gray-400 mb-4">Baisakh Celebration • Dance dramas (Chitrangada/Tasher Desh), poetry recitals, and chorus.</p>
-          <span class="text-xs px-2.5 py-1 rounded bg-purple-500/20 text-purple-300 font-medium">Auditorium, Sholinganallur</span>
+      <!-- Schedule Table -->
+      <div class="card-glass rounded-2xl border border-white/10 overflow-hidden mb-12 shadow-2xl">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm text-gray-300">
+            <thead class="bg-black/40 text-dcpca-gold uppercase font-mono text-[11px] tracking-wider border-b border-white/10">
+              <tr>
+                <th class="py-4 px-6">Date & Tithi</th>
+                <th class="py-4 px-6">Event / Festival</th>
+                <th class="py-4 px-6">Key Ritual Highlights</th>
+                <th class="py-4 px-6 text-right">Venue</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5">
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="py-4 px-6 font-semibold text-white">Oct 16, 2026 (Fri) — Shasthi</td>
+                <td class="py-4 px-6 text-dcpca-goldLight font-serif font-bold">Bodhon & Amantran</td>
+                <td class="py-4 px-6">Kalparambho, Adhibas, Unveiling of Goddess Durga</td>
+                <td class="py-4 px-6 text-right">OMR Pandal Grounds</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="py-4 px-6 font-semibold text-white">Oct 17, 2026 (Sat) — Saptami</td>
+                <td class="py-4 px-6 text-dcpca-goldLight font-serif font-bold">Maha Saptami Puja</td>
+                <td class="py-4 px-6">Nabapatrika Prabesh, Pushpanjali, Afternoon Bhog Prasad</td>
+                <td class="py-4 px-6 text-right">OMR Pandal Grounds</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="py-4 px-6 font-semibold text-white">Oct 18, 2026 (Sun) — Ashtami</td>
+                <td class="py-4 px-6 text-dcpca-goldLight font-serif font-bold">Maha Ashtami & Sandhi Puja</td>
+                <td class="py-4 px-6">Kumari Puja, 108 Lamps Sandhi Arati, Dhunuchi Naach</td>
+                <td class="py-4 px-6 text-right">OMR Pandal Grounds</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="py-4 px-6 font-semibold text-white">Oct 19, 2026 (Mon) — Navami</td>
+                <td class="py-4 px-6 text-dcpca-goldLight font-serif font-bold">Maha Navami & Homa</td>
+                <td class="py-4 px-6">Maha Yagna, Cultural Extravaganza, Special Evening Arati</td>
+                <td class="py-4 px-6 text-right">OMR Pandal Grounds</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="py-4 px-6 font-semibold text-white">Oct 20, 2026 (Tue) — Dashami</td>
+                <td class="py-4 px-6 text-dcpca-goldLight font-serif font-bold">Bijoya Dashami & Visarjan</td>
+                <td class="py-4 px-6">Sindoor Khela, Devotee Farewells, Immersion Procession</td>
+                <td class="py-4 px-6 text-right">OMR Pandal Grounds</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+
+      <!-- Official Calendar Poster Feature -->
+      <div class="card-glass rounded-2xl p-6 sm:p-8 border border-dcpca-gold/30 flex flex-col md:flex-row items-center gap-8">
+        <div class="w-full md:w-1/2 aspect-[3/4] rounded-xl overflow-hidden relative group border border-white/10 shadow-2xl cursor-pointer" id="calendar-poster-trigger">
+          <img
+            src={`${baseUrl}events-calendar-2026.jpeg`}
+            alt="DCPCA Events Calendar 2026 Poster"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+            <span class="px-4 py-2 rounded-full bg-black/70 backdrop-blur-md text-dcpca-gold text-xs font-semibold border border-dcpca-gold/40 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              </svg>
+              Click to Enlarge Official Poster
+            </span>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 space-y-4">
+          <span class="text-xs font-mono text-dcpca-gold uppercase tracking-widest">Official Publication</span>
+          <h3 class="text-2xl font-serif font-bold text-white">DCPCA Event Calendar 2026</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Our comprehensive annual calendar highlights all major Bengali festivals, Rabindra Jayanti, Saraswati Puja, Anandamela, and Sharadotsav key dates.
+          </p>
+          <div class="space-y-2 text-xs text-gray-400 border-t border-white/10 pt-4">
+            <p class="flex items-center gap-2 text-white">
+              <span>📍</span> <strong>Venue:</strong> Classic Farms / OMR Grounds, Sholinganallur, Chennai
+            </p>
+            <p class="flex items-center gap-2 text-white">
+              <span>📞</span> <strong>Helpline:</strong> 98843 66278 / 98410 27596 / 87545 77512 / 96000 65683
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- 7. Member Onboarding & Final Action Fold -->
+  <!-- 8. Google Sign-In Member Portal Trigger & Registered Office Info -->
   <section id="members" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
     <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-dcpca-terracotta to-dcpca-gold flex items-center justify-center mx-auto mb-6 text-3xl shadow-xl">
       🌺
@@ -238,15 +306,47 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
       Join hands with hundreds of families across Dakshin Chennai. Participate in cultural performances, volunteer for festival organization, or simply immerse yourself in the joy of communion.
     </p>
 
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <button onclick="document.getElementById('auth-button').click()" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-dcpca-terracotta to-dcpca-gold text-black font-bold text-sm hover:scale-105 shadow-xl shadow-dcpca-terracotta/30 transition-all">
-        Join DCPCA via Google Account
+    <!-- Google Sign-in Trigger -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+      <button
+        onclick="document.getElementById('auth-button').click()"
+        class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-dcpca-terracotta to-dcpca-gold text-black font-bold text-sm hover:scale-105 shadow-xl shadow-dcpca-terracotta/30 transition-all cursor-pointer"
+      >
+        Sign in with Google to Join Portal
       </button>
-      <a href="mailto:dcpca.omr.official@gmail.com" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 text-white font-medium text-sm hover:bg-white/20 border border-white/10 transition-all">
+      <a
+        href="mailto:dcpca.omr.official@gmail.com"
+        class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 text-white font-medium text-sm hover:bg-white/20 border border-white/10 transition-all"
+      >
         Contact Office Bearers
       </a>
     </div>
+
+    <!-- Registered Office Info Card -->
+    <div class="card-glass rounded-2xl p-6 border border-white/10 text-left text-xs sm:text-sm text-gray-300 max-w-2xl mx-auto">
+      <h4 class="font-serif font-bold text-dcpca-gold mb-2 text-base">Registered Office & Contact Details</h4>
+      <p class="leading-relaxed mb-3">
+        <strong>Dakshin Chennai Prabasi Cultural Association (DCPCA)</strong><br />
+        Classic Farms Road, Sholinganallur, Rajiv Gandhi Salai (OMR), Chennai, Tamil Nadu – 600119.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-400 border-t border-white/10 pt-3 text-xs">
+        <div>📧 <strong>Email:</strong> dcpca.omr.official@gmail.com</div>
+        <div>🌐 <strong>Web:</strong> www.dcpca.in</div>
+        <div>📞 <strong>Phone:</strong> +91 98843 66278 / 98410 27596</div>
+        <div>📞 <strong>Helpline:</strong> +91 87545 77512 / 96000 65683</div>
+      </div>
+    </div>
   </section>
+
+  <!-- Calendar Poster Modal -->
+  <div id="poster-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden flex-col items-center justify-center p-4">
+    <button id="close-poster-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/10">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <img src={`${baseUrl}events-calendar-2026.jpeg`} alt="DCPCA Events Calendar 2026 Full View" class="max-h-[90vh] max-w-full object-contain rounded-xl shadow-2xl" />
+  </div>
 
   <script>
     // 1. Interactive 3D Cursor-Tracking Card Tilt Effect
@@ -271,8 +371,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
       });
     });
 
-    // 2. Interactive Countdown Widget for Durga Puja
-    const targetDate = new Date("2026-10-17T00:00:00+05:30").getTime();
+    // 2. Countdown Widget for Durga Puja 2026
+    const targetDate = new Date("2026-10-16T00:00:00+05:30").getTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
@@ -295,6 +395,34 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
 
     updateCountdown();
     setInterval(updateCountdown, 60000);
+
+    // 3. Calendar Poster Modal Logic
+    const posterTrigger = document.getElementById('calendar-poster-trigger');
+    const posterModal = document.getElementById('poster-modal');
+    const closePosterModal = document.getElementById('close-poster-modal');
+
+    if (posterTrigger && posterModal) {
+      posterTrigger.addEventListener('click', () => {
+        posterModal.classList.remove('hidden');
+        posterModal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+
+    if (closePosterModal && posterModal) {
+      closePosterModal.addEventListener('click', () => {
+        posterModal.classList.add('hidden');
+        posterModal.classList.remove('flex');
+        document.body.style.overflow = '';
+      });
+      posterModal.addEventListener('click', (e) => {
+        if (e.target === posterModal) {
+          posterModal.classList.add('hidden');
+          posterModal.classList.remove('flex');
+          document.body.style.overflow = '';
+        }
+      });
+    }
   </script>
 
 </Layout>
