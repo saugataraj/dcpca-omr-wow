@@ -1,0 +1,2 @@
+This folder contains the year wise Durga Puja image files.
+File name has marked the year number for easy identification. 
