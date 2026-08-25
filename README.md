@@ -1,2 +1,2 @@
-# dcpca-omr-wow
+# DCPCA OMR
 DCPCA New Website experiment
