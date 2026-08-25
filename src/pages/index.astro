@@ -45,7 +45,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
   <!-- 3. Dynamic 12-Year Retrospective Gallery -->
   <YearArchive />
 
-  <!-- 4. Philosophical Anchor Section (Rabindranath Tagore's Utsab) with Archival Photo Previews -->
+  <!-- 4. Philosophical Anchor Section (Rabindranath Tagore's Utsab) -->
   <section id="philosophy" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-xs font-mono uppercase tracking-widest text-dcpca-gold">Living Philosophy</span>
@@ -57,74 +57,38 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Pillar 1: Milan -->
-      <div class="tilt-card card-glass rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 border border-white/10 hover:border-dcpca-gold/50 flex flex-col justify-between">
-        <div class="h-44 w-full relative overflow-hidden bg-black/40">
-          <img
-            src={`${baseUrl}gallery/2024_03.jpeg`}
-            alt="Milan - Morning Pushpanjali Gathering"
-            loading="lazy"
-            decoding="async"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#120F24] via-transparent to-transparent"></div>
-        </div>
-        <div class="p-6">
-          <div class="text-3xl mb-3 text-dcpca-gold">🤝</div>
-          <h3 class="text-xl font-serif font-bold text-white mb-2">মিলন (Milan — Sacred Union)</h3>
-          <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“একলার উৎসব হইলে চলে না”</p>
-          <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-            Daily life scatters us into isolated pursuits. A festival is the sacred moment when boundaries dissolve, bringing families, neighbors, and strangers together in joy.
-          </p>
-        </div>
+      <div class="tilt-card card-glass p-8 rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 border border-white/10 hover:border-dcpca-gold/50">
+        <div class="text-4xl mb-4 text-dcpca-gold">🤝</div>
+        <h3 class="text-xl font-serif font-bold text-white mb-2">মিলন (Milan — Sacred Union)</h3>
+        <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“একলার উৎসব হইলে চলে না”</p>
+        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+          Daily life scatters us into isolated pursuits. A festival is the sacred moment when boundaries dissolve, bringing families, neighbors, and strangers together in joy.
+        </p>
       </div>
 
       <!-- Pillar 2: Prem & Ananda -->
-      <div class="tilt-card card-glass rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 border border-white/10 hover:border-dcpca-terracotta/50 flex flex-col justify-between">
-        <div class="h-44 w-full relative overflow-hidden bg-black/40">
-          <img
-            src={`${baseUrl}gallery/2025_02.jpeg`}
-            alt="Prem & Ananda - Cultural Evening"
-            loading="lazy"
-            decoding="async"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#120F24] via-transparent to-transparent"></div>
-        </div>
-        <div class="p-6">
-          <div class="text-3xl mb-3 text-dcpca-terracotta">✨</div>
-          <h3 class="text-xl font-serif font-bold text-white mb-2">প্রেম ও আনন্দ (Love & Pure Joy)</h3>
-          <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“আনন্দরূপমমৃতং যদ্বিভাতি”</p>
-          <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-            Beyond dry rituals, true celebration is the experience of boundless joy and affection. We celebrate art, poetry, music, and shared meals with open hearts.
-          </p>
-        </div>
+      <div class="tilt-card card-glass p-8 rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 border border-white/10 hover:border-dcpca-terracotta/50">
+        <div class="text-4xl mb-4 text-dcpca-terracotta">✨</div>
+        <h3 class="text-xl font-serif font-bold text-white mb-2">প্রেম ও আনন্দ (Love & Pure Joy)</h3>
+        <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“আনন্দরূপমমৃতং যদ্বিভাতি”</p>
+        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+          Beyond dry rituals, true celebration is the experience of boundless joy and affection. We celebrate art, poetry, music, and shared meals with open hearts.
+        </p>
       </div>
 
       <!-- Pillar 3: Universal Harmony -->
-      <div class="tilt-card card-glass rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 border border-white/10 hover:border-amber-300/50 flex flex-col justify-between">
-        <div class="h-44 w-full relative overflow-hidden bg-black/40">
-          <img
-            src={`${baseUrl}gallery/2023_03.jpeg`}
-            alt="Udarata - Universal Food & Fellowship"
-            loading="lazy"
-            decoding="async"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#120F24] via-transparent to-transparent"></div>
-        </div>
-        <div class="p-6">
-          <div class="text-3xl mb-3 text-amber-300">🌿</div>
-          <h3 class="text-xl font-serif font-bold text-white mb-2">উদারতা (Universal Inclusion)</h3>
-          <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“সেদিন একলার গৃহ সকলের গৃহ হয়”</p>
-          <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-            On festival days, our home belongs to everyone. We welcome non-Bengali brothers, sisters, and Chennai residents with equal warmth, respect, and honor.
-          </p>
-        </div>
+      <div class="tilt-card card-glass p-8 rounded-2xl relative overflow-hidden group cursor-pointer transition-all duration-300 border border-white/10 hover:border-amber-300/50">
+        <div class="text-4xl mb-4 text-amber-300">🌿</div>
+        <h3 class="text-xl font-serif font-bold text-white mb-2">উদারতা (Universal Inclusion)</h3>
+        <p class="font-bengali text-sm text-dcpca-goldLight/80 mb-3">“সেদিন একলার গৃহ সকলের গৃহ হয়”</p>
+        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+          On festival days, our home belongs to everyone. We welcome non-Bengali brothers, sisters, and Chennai residents with equal warmth, respect, and honor.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- 5. Bento Grid: Cultural Programs & Next-Gen Heritage Hub with Archival Photo Previews -->
+  <!-- 5. Bento Grid: Cultural Programs & Next-Gen Heritage Hub -->
   <section id="heritage" class="py-20 bg-[#0E0B1A] border-y border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -137,28 +101,16 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Card 1: Rabindra & Nazrul -->
-        <div class="tilt-card card-glass rounded-2xl md:col-span-2 flex flex-col justify-between border border-white/10 hover:border-dcpca-gold/50 cursor-pointer overflow-hidden group">
-          <div class="grid grid-cols-1 sm:grid-cols-2 items-center">
-            <div class="p-6">
-              <div class="inline-block px-3 py-1 rounded-full bg-dcpca-gold/20 text-dcpca-gold text-xs font-semibold uppercase mb-3">Literary & Performing Arts</div>
-              <h3 class="text-2xl font-serif font-bold text-white mb-2">Rabindra & Nazrul Jayanti Academies</h3>
-              <p class="text-gray-300 text-sm leading-relaxed mb-4">
-                Regular workshops for children and youth in Rabindra Sangeet, Nazrul Geeti, recitations, drama, and classical Bengali literature.
-              </p>
-            </div>
-            <div class="h-48 sm:h-full w-full relative overflow-hidden bg-black/40">
-              <img
-                src={`${baseUrl}gallery/2024_02.jpeg`}
-                alt="Youth Cultural Performance"
-                loading="lazy"
-                decoding="async"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-r from-[#120F24] via-transparent to-transparent hidden sm:block"></div>
-            </div>
+        <div class="tilt-card card-glass p-6 rounded-2xl md:col-span-2 flex flex-col justify-between border border-white/10 hover:border-dcpca-gold/50 cursor-pointer">
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full bg-dcpca-gold/20 text-dcpca-gold text-xs font-semibold uppercase mb-3">Literary & Performing Arts</div>
+            <h3 class="text-2xl font-serif font-bold text-white mb-2">Rabindra & Nazrul Jayanti Academies</h3>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              Regular workshops for children and youth in Rabindra Sangeet, Nazrul Geeti, recitations, drama, and classical Bengali literature to instill deep intellectual and artistic roots.
+            </p>
           </div>
-          <div class="flex flex-wrap items-center gap-3 p-4 bg-black/20 border-t border-white/10 text-xs text-dcpca-goldLight font-medium">
-            <span>📚 Storytelling Sessions</span> • <span>🎭 Annual Natok Stage</span> • <span>🎶 Vocal Workshops</span>
+          <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-white/10 text-xs text-dcpca-goldLight font-medium">
+            <span>📚 Storytelling Sessions</span> • <span>🎭 Annual Natok Stage</span> • <span>🎶 Vocal & Instrumental Workshops</span>
           </div>
         </div>
 
@@ -167,14 +119,11 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
           <div>
             <div class="inline-block px-3 py-1 rounded-full bg-dcpca-terracotta/20 text-dcpca-terracotta text-xs font-semibold uppercase mb-3">Youth Philosophy</div>
             <h3 class="text-xl font-serif font-bold text-white mb-2">Vivekananda Youth Forum</h3>
-            <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4">
+            <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
               Discourses on character building, moral courage, rationalism, and compassion for students and teenagers living along OMR.
             </p>
-            <div class="h-28 w-full rounded-xl overflow-hidden relative">
-              <img src={`${baseUrl}gallery/2016_03.jpeg`} alt="Youth Art & Literature Session" loading="lazy" decoding="async" class="w-full h-full object-cover" />
-            </div>
           </div>
-          <div class="pt-4 border-t border-white/10 text-xs text-gray-400 mt-4">
+          <div class="pt-4 border-t border-white/10 text-xs text-gray-400">
             Monthly Youth Dialogues
           </div>
         </div>
@@ -184,40 +133,25 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
           <div>
             <div class="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-semibold uppercase mb-3">Visual Storytelling</div>
             <h3 class="text-xl font-serif font-bold text-white mb-2">Satyajit Ray Film Guild</h3>
-            <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4">
-              Screening timeless cinema from Satyajit Ray, Mrinal Sen, and Ritwik Ghatak with English subtitles for cinema enthusiasts.
+            <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+              Screening timeless cinema from Satyajit Ray, Mrinal Sen, and Ritwik Ghatak with English subtitles and panel discussions for all cinema enthusiasts.
             </p>
-            <div class="h-28 w-full rounded-xl overflow-hidden relative">
-              <img src={`${baseUrl}gallery/2017_02.jpeg`} alt="Satyajit Ray Tribute" loading="lazy" decoding="async" class="w-full h-full object-cover" />
-            </div>
           </div>
-          <div class="pt-4 border-t border-white/10 text-xs text-gray-400 mt-4">
+          <div class="pt-4 border-t border-white/10 text-xs text-gray-400">
             Weekend Film Screenings on OMR
           </div>
         </div>
 
         <!-- Card 4: Culinary Harmony (Anandamela) -->
-        <div class="tilt-card card-glass rounded-2xl md:col-span-2 flex flex-col justify-between border border-white/10 hover:border-amber-400/50 cursor-pointer overflow-hidden group">
-          <div class="grid grid-cols-1 sm:grid-cols-2 items-center">
-            <div class="p-6">
-              <div class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase mb-3">Culinary Heritage</div>
-              <h3 class="text-2xl font-serif font-bold text-white mb-2">Anandamela & Culinary Exchange</h3>
-              <p class="text-gray-300 text-sm leading-relaxed mb-4">
-                From authentic *Shorshe Ilish*, *Kosha Mangsho*, and *Mishti Doi* to collaborative food festivals introducing traditional Bengali cuisine to our Tamil friends.
-              </p>
-            </div>
-            <div class="h-48 sm:h-full w-full relative overflow-hidden bg-black/40">
-              <img
-                src={`${baseUrl}gallery/2023_03.jpeg`}
-                alt="Anandamela Food Stalls"
-                loading="lazy"
-                decoding="async"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-r from-[#120F24] via-transparent to-transparent hidden sm:block"></div>
-            </div>
+        <div class="tilt-card card-glass p-6 rounded-2xl md:col-span-2 flex flex-col justify-between border border-white/10 hover:border-amber-400/50 cursor-pointer">
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase mb-3">Culinary Heritage</div>
+            <h3 class="text-2xl font-serif font-bold text-white mb-2">Anandamela & Culinary Exchange</h3>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              From authentic *Shorshe Ilish*, *Kosha Mangsho*, and *Mishti Doi* to collaborative food festivals introducing traditional Bengali cuisine to our Tamil and South Indian friends.
+            </p>
           </div>
-          <div class="flex flex-wrap items-center gap-3 p-4 bg-black/20 border-t border-white/10 text-xs text-dcpca-goldLight font-medium">
+          <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-white/10 text-xs text-dcpca-goldLight font-medium">
             <span>🍲 Home Cook Showcases</span> • <span>🍮 Sweet Making Workshops</span> • <span>🌾 Maha Bhog Distribution</span>
           </div>
         </div>
@@ -247,18 +181,13 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
           </div>
         </div>
 
-        <div class="bg-[#0A0812]/80 p-6 sm:p-8 rounded-2xl border border-white/10 flex flex-col justify-center text-center relative overflow-hidden">
-          <div class="absolute inset-0 opacity-15 pointer-events-none">
-            <img src={`${baseUrl}gallery/2018_03.jpeg`} alt="Golu & Durga Confluence Backdrop" class="w-full h-full object-cover" />
-          </div>
-          <div class="relative z-10">
-            <div class="text-5xl mb-3">🪔</div>
-            <h4 class="font-serif text-xl sm:text-2xl font-bold text-dcpca-goldLight mb-2">“யாதும் ஊரே யாவரும் கேளிர்”</h4>
-            <p class="text-xs text-gray-400 italic mb-4">“To us all towns are one, all people our kin.” — Kaniyan Pungundranar (Sangam Literature)</p>
-            <div class="w-16 h-0.5 bg-dcpca-terracotta mx-auto mb-4"></div>
-            <p class="font-bengali text-sm text-dcpca-gold">“সকলের সাথে মিলিলে তবেই সার্থকতা”</p>
-            <p class="text-xs text-gray-300 mt-2">DCPCA stands as a living confluence of two magnificent, ancient cultures on Chennai's Coromandel Coast.</p>
-          </div>
+        <div class="bg-[#0A0812]/80 p-6 sm:p-8 rounded-2xl border border-white/10 flex flex-col justify-center text-center">
+          <div class="text-5xl mb-3">🪔</div>
+          <h4 class="font-serif text-xl sm:text-2xl font-bold text-dcpca-goldLight mb-2">“யாதும் ஊரே யாவரும் கேளிர்”</h4>
+          <p class="text-xs text-gray-400 italic mb-4">“To us all towns are one, all people our kin.” — Kaniyan Pungundranar (Sangam Literature)</p>
+          <div class="w-16 h-0.5 bg-dcpca-terracotta mx-auto mb-4"></div>
+          <p class="font-bengali text-sm text-dcpca-gold">“সকলের সাথে মিলিলে তবেই সার্থকতা”</p>
+          <p class="text-xs text-gray-300 mt-2">DCPCA stands as a living confluence of two magnificent, ancient cultures on Chennai's Coromandel Coast.</p>
         </div>
       </div>
     </div>
@@ -333,8 +262,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
           <img
             src={`${baseUrl}events-calendar-2026.jpeg`}
             alt="DCPCA Events Calendar 2026 Poster"
-            loading="lazy"
-            decoding="async"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
