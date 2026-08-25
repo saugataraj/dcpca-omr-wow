@@ -10,6 +10,9 @@ const {
   title = "DCPCA | Dakshin Chennai Prabasi Cultural Association", 
   description = "Dakshin Chennai Prabasi Cultural Association (DCPCA) — Celebrating Bengal's cultural soul, Sharadotsav, and unity along Chennai's OMR & ECR coastline." 
 } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const faviconSrc = `${baseUrl}favicon.svg`;
 ---
 
 <!doctype html>
@@ -17,7 +20,7 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={faviconSrc} />
     <meta name="generator" content={Astro.generator} />
     
     <title>{title}</title>
@@ -47,7 +50,7 @@ const {
     <!-- Global Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#0A0812]/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <a href="#" class="flex items-center gap-3 group">
+        <a href={`${baseUrl}`} class="flex items-center gap-3 group">
           <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-dcpca-terracotta to-dcpca-gold flex items-center justify-center font-serif font-black text-black text-xl shadow-lg group-hover:scale-105 transition-transform">
             দ
           </div>
@@ -58,12 +61,13 @@ const {
         </a>
 
         <!-- Desktop Nav Links -->
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-          <a href="#philosophy" class="text-gray-300 hover:text-dcpca-gold transition-colors">উৎসব ও মিলন</a>
-          <a href="#events" class="text-gray-300 hover:text-dcpca-gold transition-colors">Festivals & Schedule</a>
-          <a href="#heritage" class="text-gray-300 hover:text-dcpca-gold transition-colors">Next-Gen Heritage</a>
-          <a href="#inclusion" class="text-gray-300 hover:text-dcpca-gold transition-colors">Cultural Confluence</a>
-          <a href="#members" class="text-gray-300 hover:text-dcpca-gold transition-colors">Membership</a>
+        <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
+          <a href={`${baseUrl}#philosophy`} class="text-gray-300 hover:text-dcpca-gold transition-colors">উৎসব ও মিলন</a>
+          <a href={`${baseUrl}#gallery`} class="text-gray-300 hover:text-dcpca-gold transition-colors font-semibold">12-Yr Archive</a>
+          <a href={`${baseUrl}#schedule`} class="text-gray-300 hover:text-dcpca-gold transition-colors">Festivals & Schedule</a>
+          <a href={`${baseUrl}#heritage`} class="text-gray-300 hover:text-dcpca-gold transition-colors">Next-Gen Heritage</a>
+          <a href={`${baseUrl}#confluence`} class="text-gray-300 hover:text-dcpca-gold transition-colors">Cultural Confluence</a>
+          <a href={`${baseUrl}#members`} class="text-gray-300 hover:text-dcpca-gold transition-colors">Membership</a>
         </nav>
 
         <!-- Right Action: Translation Widget + Ambient Audio Toggle + Google Sign-In Trigger -->
@@ -101,10 +105,11 @@ const {
           <div>
             <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Quick Links</h4>
             <ul class="space-y-2 text-xs">
-              <li><a href="#philosophy" class="hover:text-dcpca-gold">Tagore's Utsab Philosophy</a></li>
-              <li><a href="#events" class="hover:text-dcpca-gold">Sharad Utsav & Durga Puja</a></li>
-              <li><a href="#heritage" class="hover:text-dcpca-gold">Youth Cultural Academy</a></li>
-              <li><a href="#members" class="hover:text-dcpca-gold">Register as a Member</a></li>
+              <li><a href={`${baseUrl}#philosophy`} class="hover:text-dcpca-gold">Tagore's Utsab Philosophy</a></li>
+              <li><a href={`${baseUrl}#gallery`} class="hover:text-dcpca-gold">12-Year Retrospective Gallery</a></li>
+              <li><a href={`${baseUrl}#schedule`} class="hover:text-dcpca-gold font-semibold text-dcpca-goldLight">Sharad Utsav & Durga Puja</a></li>
+              <li><a href={`${baseUrl}#heritage`} class="hover:text-dcpca-gold">Youth Cultural Academy</a></li>
+              <li><a href={`${baseUrl}#members`} class="hover:text-dcpca-gold">Register as a Member</a></li>
             </ul>
           </div>
           <div>

@@ -4,8 +4,8 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://dcpca.github.io',
-  base: '/',
+  site: 'https://saugataraj.github.io',
+  base: '/dcpca-omr-wow',
   integrations: [
     tailwind({
       applyBaseStyles: false,
